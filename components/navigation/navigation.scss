@@ -1,1 +1,22 @@
-@import "../../styles/colors.scss";
+@import "../../styles/_colors.scss";
+
+nav {
+  ul {
+    color: $color-fg;
+    display: flex;
+
+    li {
+      list-style-type: none;
+      padding: 1rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  a {
+    color: $color-fg;
+    text-decoration: none;
+    &:hover {
+      color: $color-fg-focus;
+    }
+  }
+}
