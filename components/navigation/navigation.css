@@ -76,8 +76,14 @@ nav .search-icon i.material-icons {
 }
 
 @media screen and (max-width: 768px) {
+  nav {
+    height: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
   .mobile-nav {
-    width: calc(100% - 4rem);
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -89,7 +95,7 @@ nav .search-icon i.material-icons {
             justify-content: space-between;
   }
   nav {
-    width: calc(100% - 2rem);
+    width: 100%;
     background-color: #121212;
     top: 5.5rem;
     position: fixed;
