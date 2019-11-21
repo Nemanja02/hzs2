@@ -7,6 +7,11 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  font-size: 1.5rem;
+}
+
+nav .mobile-nav {
+  display: none;
 }
 
 nav ul {
@@ -18,7 +23,6 @@ nav ul {
 nav ul li {
   list-style-type: none;
   padding: 1rem;
-  font-size: 1.5rem;
 }
 
 nav a {
@@ -30,13 +34,51 @@ nav a:hover {
   color: #999999;
 }
 
-nav i.material-icons {
+nav .search-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .search-icon i.material-icons {
+  padding-left: 1rem;
   color: #ffffff;
   font-size: 2rem;
 }
 
-nav i.material-icons:hover {
-  color: #999999;
+@media screen and (max-width: 768px) {
+  nav {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  nav .mobile-nav {
+    display: initial;
+  }
+  nav ul {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  nav > a {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
 }
 /*# sourceMappingURL=navigation.css.map */

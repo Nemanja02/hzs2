@@ -5,13 +5,17 @@ nav {
   color: $color-fg;
   display: flex;
   justify-content: space-between;
+  font-size: 1.5rem;
+
+  .mobile-nav {
+    display: none;
+  }
   ul {
     display: flex;
 
     li {
       list-style-type: none;
       padding: 1rem;
-      font-size: 1.5rem;
     }
   }
 
@@ -22,13 +26,32 @@ nav {
       color: $color-fg-focus;
     }
   }
-
-  i.material-icons {
+  .search-icon {
+    display: flex;
     padding: 1rem;
-    color: $color-fg;
-    font-size: 2rem;
-    &:hover {
-      color: $color-fg-focus;
+    align-items: center;
+    i.material-icons {
+      padding-left: 1rem;
+      color: $color-fg;
+      font-size: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    .mobile-nav {
+      display: initial;
+    }
+    align-items: center;
+    flex-direction: column;
+    ul {
+      order: 1;
+      flex-direction: column;
+      align-items: center;
+    }
+    & > a {
+      order: 0;
     }
   }
 }
