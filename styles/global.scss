@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 html {
@@ -18,4 +19,14 @@ html {
   html {
     font-size: 10px;
   }
+}
+
+h1 {
+  color: white;
+  font-size: 4rem;
+}
+
+h2 {
+  color: white;
+  font-size: 2.5rem;
 }
