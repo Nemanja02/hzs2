@@ -10,11 +10,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="styles/global.css">
   <title>xD</title>
+  <link rel="stylesheet" href="styles/index/index.css">
 </head>
 
 <body>
   <?php echo file_get_contents('components/navigation/navigation.html'); ?>
-
+  <div class="banner"></div>
+  <div class="float"></div>
 </body>
 
 </html>

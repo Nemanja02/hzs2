@@ -1,0 +1,18 @@
+.banner {
+  padding-top: 6rem;
+  width: 100%;
+  height: calc(100vh - 6rem);
+  background: url(/assets/images/concert-photo.jpg);
+  background-size: cover;
+}
+
+.float {
+  border-radius: 1rem 0 0 0;
+  position: absolute;
+  top: calc(100% - 6rem);
+  width: 800px;
+  height: 100vh;
+  background-color: #121212;
+  right: 0;
+}
+/*# sourceMappingURL=index.css.map */
