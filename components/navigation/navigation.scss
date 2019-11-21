@@ -15,6 +15,7 @@
 }
 
 nav {
+  transform-origin: top;
   padding: 1rem;
   color: $color-fg;
   display: flex;
@@ -64,7 +65,6 @@ nav {
     position: fixed;
     transition: all 0.2s;
     transform: scaleY(0);
-    transform-origin: top;
     align-items: center;
     flex-direction: column;
     ul {

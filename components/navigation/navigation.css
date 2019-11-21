@@ -15,6 +15,8 @@
 }
 
 nav {
+  -webkit-transform-origin: top;
+          transform-origin: top;
   padding: 1rem;
   color: #ffffff;
   display: -webkit-box;
@@ -85,8 +87,6 @@ nav .search-icon i.material-icons {
     transition: all 0.2s;
     -webkit-transform: scaleY(0);
             transform: scaleY(0);
-    -webkit-transform-origin: top;
-            transform-origin: top;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
