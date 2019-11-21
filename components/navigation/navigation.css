@@ -1,5 +1,15 @@
-nav ul {
+nav {
+  padding: 1rem;
   color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,6 +27,16 @@ nav a {
 }
 
 nav a:hover {
+  color: #999999;
+}
+
+nav i.material-icons {
+  padding: 1rem;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+nav i.material-icons:hover {
   color: #999999;
 }
 /*# sourceMappingURL=navigation.css.map */

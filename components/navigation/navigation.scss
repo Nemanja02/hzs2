@@ -1,8 +1,11 @@
 @import "../../styles/_colors.scss";
 
 nav {
+  padding: 1rem;
+  color: $color-fg;
+  display: flex;
+  justify-content: space-between;
   ul {
-    color: $color-fg;
     display: flex;
 
     li {
@@ -15,6 +18,15 @@ nav {
   a {
     color: $color-fg;
     text-decoration: none;
+    &:hover {
+      color: $color-fg-focus;
+    }
+  }
+
+  i.material-icons {
+    padding: 1rem;
+    color: $color-fg;
+    font-size: 2rem;
     &:hover {
       color: $color-fg-focus;
     }
