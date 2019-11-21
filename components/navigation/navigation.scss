@@ -46,11 +46,47 @@ nav {
     &:hover i.material-icons {
       color: $color-fg-focus;
     }
+
+    &:focus {
+      color: $color-primary;
+      outline: none;
+    }
   }
-  .search-icon {
+  #search-icon {
     display: flex;
     padding: 1rem;
     align-items: center;
+    cursor: pointer;
+    &:hover,
+    &:hover i.material-icons {
+      color: $color-fg-focus;
+    }
+    span {
+      transition: all 0.2s;
+      transform-origin: right;
+      transform: translateX(200%);
+    }
+    input {
+      transition: all 0.2s;
+      transform-origin: right;
+      transform: scaleX(0);
+      background: none;
+      border: none;
+      border-bottom: 1px solid $color-fg;
+      color: $color-fg;
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+    &:focus,
+    &:focus-within {
+      span {
+        transform: scaleX(0);
+      }
+
+      input {
+        transform: scaleX(1);
+      }
+    }
     i.material-icons {
       padding-left: 1rem;
       color: $color-fg;
