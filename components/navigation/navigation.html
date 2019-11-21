@@ -1,13 +1,19 @@
 <link rel="stylesheet" href="/components/navigation/navigation.css" />
 <header>
-  <nav>
-    <div class="mobile-nav">
-      <div class="hamburger hamburger--collapse" type="button">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </div>
+  <div class="mobile-nav">
+    <span>Mape</span>
+    <div
+      onclick="toggleBurger()"
+      id="burger"
+      class="hamburger hamburger--collapse"
+      type="button"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
     </div>
+  </div>
+  <nav id="nav">
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="#">About</a></li>
@@ -22,3 +28,4 @@
     >
   </nav>
 </header>
+<script src="/components/navigation/hamburger.js"></script>
