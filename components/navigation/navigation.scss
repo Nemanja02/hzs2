@@ -1,5 +1,12 @@
 @import "../../styles/_colors.scss";
 
+header {
+  z-index: 200;
+  position: fixed;
+  background-color: $color-bg;
+  width: 100%;
+  box-shadow: 0 0.5rem 0.5rem rgba($color-bg, 0.3);
+}
 .mobile-nav {
   padding: 1rem 2rem;
   color: $color-fg;
@@ -15,6 +22,7 @@
 }
 
 nav {
+  position: relative;
   transform-origin: top;
   padding: 1rem;
   color: $color-fg;
@@ -52,14 +60,18 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
+  nav {
+    height: 100%;
+    justify-content: start;
+  }
   .mobile-nav {
-    width: calc(100% - 4rem);
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   nav {
-    width: calc(100% - 2rem);
+    width: 100%;
     background-color: $color-bg;
     top: 5.5rem;
     position: fixed;
