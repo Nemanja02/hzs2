@@ -60,7 +60,7 @@ nav a:hover i.material-icons {
 }
 
 nav a:focus {
-  color: #4ddee9;
+  color: #5f91d2;
   outline: none;
 }
 
@@ -106,8 +106,8 @@ nav #search-icon input {
   transition: all 0.2s;
   -webkit-transform-origin: right;
           transform-origin: right;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  -webkit-transform: scaleX(0) translateY(50%);
+          transform: scaleX(0) translateY(50%);
   background: none;
   border: none;
   border-bottom: 1px solid #ffffff;

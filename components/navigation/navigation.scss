@@ -78,7 +78,7 @@ nav {
     input {
       transition: all 0.2s;
       transform-origin: right;
-      transform: scaleX(0);
+      transform: scaleX(0) translateY(50%);
       background: none;
       border: none;
       border-bottom: 1px solid $color-fg;
