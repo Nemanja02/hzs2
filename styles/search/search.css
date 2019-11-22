@@ -1,0 +1,103 @@
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-top: 8rem;
+  color: #ffffff;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cards .card {
+  border-radius: 0.5rem;
+  color: #ffffff;
+  margin: 1rem;
+  width: 100%;
+  max-width: 350px;
+  background-color: #1f1f1f;
+  -webkit-box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.25);
+          box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.cards .card img {
+  width: 100%;
+  height: 12rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5em 0.5em 0 0;
+}
+
+.cards .card i.material-icons {
+  font-size: 1.75rem;
+  padding: 0.5rem;
+  background-color: #121212;
+  border-radius: 50%;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 10;
+}
+
+.cards .card .body {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  line-height: 1.5;
+}
+
+.cards .card .body * {
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+}
+
+.cards .card .body .name {
+  font-size: 2rem;
+}
+
+.cards .card .links {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+
+.cards .card .links .buy {
+  border: white 1px solid;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+.cards .card .links a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.cards .card .links a:hover {
+  border-color: #999999;
+  color: #999999;
+}
+
+.cards .card .links a:focus {
+  border-color: #5f91d2;
+  color: #5f91d2;
+}
+/*# sourceMappingURL=search.css.map */
