@@ -60,11 +60,13 @@ nav a:hover i.material-icons {
 }
 
 nav a:focus {
-  color: #4ddee9;
+  color: #5f91d2;
   outline: none;
 }
 
 nav #search-icon {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,6 +75,18 @@ nav #search-icon {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+}
+
+nav #search-icon div {
+  position: relative;
+}
+
+nav #search-icon div * {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
 }
 
 nav #search-icon:hover,
@@ -85,8 +99,6 @@ nav #search-icon span {
   transition: all 0.2s;
   -webkit-transform-origin: right;
           transform-origin: right;
-  -webkit-transform: translateX(200%);
-          transform: translateX(200%);
 }
 
 nav #search-icon input {
@@ -94,8 +106,8 @@ nav #search-icon input {
   transition: all 0.2s;
   -webkit-transform-origin: right;
           transform-origin: right;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  -webkit-transform: scaleX(0) translateY(50%);
+          transform: scaleX(0) translateY(50%);
   background: none;
   border: none;
   border-bottom: 1px solid #ffffff;
@@ -105,13 +117,13 @@ nav #search-icon input {
 }
 
 nav #search-icon:focus span, nav #search-icon:focus-within span {
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  -webkit-transform: scaleX(0) translateY(50%);
+          transform: scaleX(0) translateY(50%);
 }
 
 nav #search-icon:focus input, nav #search-icon:focus-within input {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  -webkit-transform: scaleX(1) translateY(50%);
+          transform: scaleX(1) translateY(50%);
 }
 
 nav #search-icon i.material-icons {

@@ -53,6 +53,16 @@ nav {
     }
   }
   #search-icon {
+    align-self: flex-end;
+    div {
+      position: relative;
+      * {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: translateY(50%);
+      }
+    }
     display: flex;
     padding: 1rem;
     align-items: center;
@@ -64,12 +74,11 @@ nav {
     span {
       transition: all 0.2s;
       transform-origin: right;
-      transform: translateX(200%);
     }
     input {
       transition: all 0.2s;
       transform-origin: right;
-      transform: scaleX(0);
+      transform: scaleX(0) translateY(50%);
       background: none;
       border: none;
       border-bottom: 1px solid $color-fg;
@@ -80,11 +89,11 @@ nav {
     &:focus,
     &:focus-within {
       span {
-        transform: scaleX(0);
+        transform: scaleX(0) translateY(50%);
       }
 
       input {
-        transform: scaleX(1);
+        transform: scaleX(1) translateY(50%);
       }
     }
     i.material-icons {
