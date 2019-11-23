@@ -17,8 +17,8 @@
     margin: 1rem;
     width: 100%;
     max-width: 350px;
-    background-color: lighten($color-bg, 5%);
-    box-shadow: 7px 7px 20px rgba(#000, 0.25);
+    background-color: $color-card-bg;
+    box-shadow: 7px 7px 20px $color-shadow;
     position: relative;
 
     img {
@@ -58,7 +58,7 @@
       padding-bottom: 1rem;
       padding-right: 1rem;
       .buy {
-        border: white 1px solid;
+        border: $color-fg 1px solid;
         border-radius: 0.25rem;
         padding: 0.5rem;
       }

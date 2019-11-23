@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="styles/index/index.css" />
 </head>
 
-<body>
+<body onload="themeLoad()">
   <?php include 'components/navigation/navigation.html'; ?>
   <div class="banner">
     <div>

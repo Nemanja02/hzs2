@@ -1,26 +1,44 @@
+.dark {
+  --color-bg: #121212;
+  --color-card-bg: lighten(#121212, 5%);
+  --color-fg: #ffffff;
+  --color-fg-focus: #bbbbbb;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-primary: rgb(95, 145, 210);
+}
+
+.light {
+  --color-bg: #ffffff;
+  --color-card-bg: #fff;
+  --color-fg: #121212;
+  --color-fg-focus: #555555;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: rgb(95, 145, 210);
+}
+
 header {
   z-index: 200;
   position: fixed;
-  background-color: #121212;
+  background-color: var(--color-bg);
   width: 100%;
-  -webkit-box-shadow: 0 0.5rem 0.5rem rgba(18, 18, 18, 0.3);
-          box-shadow: 0 0.5rem 0.5rem rgba(18, 18, 18, 0.3);
+  -webkit-box-shadow: 0 0.5rem 0.5rem var(--color-shadow);
+          box-shadow: 0 0.5rem 0.5rem var(--color-shadow);
 }
 
 .mobile-nav {
   padding: 1rem 2rem;
-  color: #ffffff;
+  color: var(--color-fg);
   display: none;
   font-size: 1.5rem;
 }
 
 .mobile-nav a {
-  color: #ffffff;
+  color: var(--color-fg);
   text-decoration: none;
 }
 
 .mobile-nav a:hover {
-  color: #999999;
+  color: var(--color-fg-focus);
 }
 
 nav {
@@ -28,7 +46,7 @@ nav {
   -webkit-transform-origin: top;
           transform-origin: top;
   padding: 1rem;
-  color: #ffffff;
+  color: var(--color-fg);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,17 +68,17 @@ nav ul li {
 }
 
 nav a {
-  color: #ffffff;
+  color: var(--color-fg);
   text-decoration: none;
 }
 
 nav a:hover,
 nav a:hover i.material-icons {
-  color: #999999;
+  color: var(--color-fg-focus);
 }
 
 nav a:focus {
-  color: #5f91d2;
+  color: var(--color-primary);
   outline: none;
 }
 
@@ -91,7 +109,7 @@ nav #search-icon div * {
 
 nav #search-icon:hover,
 nav #search-icon:hover i.material-icons {
-  color: #999999;
+  color: var(--color-fg-focus);
 }
 
 nav #search-icon span {
@@ -110,8 +128,8 @@ nav #search-icon input {
           transform: scaleX(0) translateY(50%);
   background: none;
   border: none;
-  border-bottom: 1px solid #ffffff;
-  color: #ffffff;
+  border-bottom: 1px solid var(--color-fg);
+  color: var(--color-fg);
   font-size: 1rem;
   padding: 0.5rem;
 }
@@ -128,7 +146,7 @@ nav #search-icon:focus input, nav #search-icon:focus-within input {
 
 nav #search-icon i.material-icons {
   padding-left: 1rem;
-  color: #ffffff;
+  color: var(--color-fg);
   font-size: 2rem;
 }
 
@@ -153,7 +171,7 @@ nav #search-icon i.material-icons {
   }
   nav {
     width: 100%;
-    background-color: #121212;
+    background-color: var(--color-bg);
     top: 5.5rem;
     position: fixed;
     -webkit-transition: all 0.2s;
