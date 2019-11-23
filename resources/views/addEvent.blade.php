@@ -78,6 +78,7 @@
 
         {!! Form::label('loc', 'Mesto dešavanja') !!}
         {!! Form::text('loc', null, ['class' => 'form-control', 'placeholder' => 'Narodno pozorište']) !!}
+        <div id="results"></div>
 
         {!! Form::label('start', 'Vreme početka') !!}
         {!! Form::date('start', null, ['class' => 'form-control']) !!}
@@ -99,6 +100,19 @@
         {!! Form::submit('Pošalji', ['class' => 'btn btn-info']) !!}
 
     {!! Form::close() !!}
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script>
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://us1.locationiq.com/v1/search.php?key=aaa9efdcf97bd5&q=Empire%20State%20Building&format=json",
+            "method": "GET"
+        }
+
+        $.ajax(settings).done(function (response) {
+            
+        });
+    </script>
   </div>
 </body>
 </html>

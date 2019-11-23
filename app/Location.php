@@ -10,7 +10,8 @@ class Location extends Model
     public static function addLocation($loc) {
         $appid = "m3Lb7YaF9vxOQOF37nLZ";
         $appcode = "pWTRm-x6I_4ra-5ziQ1LWg";
-        $get = json_decode(file_get_contents("https://geocoder.api.here.com/6.2/geocode.json?searchtext=$loc&app_id=$appid&app_code=$appcode&gen=8"));
+        $new = str_replace(' ', '%20', $loc);
+        $get = json_decode(file_get_contents("https://eu1.locationiq.com/v1/search.php?key=aaa9efdcf97bd5&q=$loc&format=json"));
         $lat = $get->Response->View[0]->Result[0]->Location->NavigationPosition[0]->Latitude;
         $long = $get->Response->View[0]->Result[0]->Location->NavigationPosition[0]->Longitude;
         $country = $get->Response->View[0]->Result[0]->Location->Address->Country;
