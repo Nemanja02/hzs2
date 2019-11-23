@@ -33,7 +33,7 @@ class EventsController extends Controller {
 
     public function addEvent(Request $req) {
         $city_id = Location::addLocation($req->get('loc'));
-        $id = Event::createEvent($req);
+        $id = Event::createEvent($req, $city_id);
         ini_set("upload_max_filesize", '150M');
         ini_set("post_max_size", '150M');
         if($files=$req->file('images')){
