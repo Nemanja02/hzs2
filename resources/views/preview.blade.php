@@ -59,7 +59,7 @@
 
   <div class="event">
     <div class="main">
-      <img src="" alt="">
+      <img src="{{asset('image/' . $data->images[0])}}" alt="{{$data->name}}">
       <div class="body">
         <span class="name">{{$data->name}}</span>
         <span class="price">{{($data->price == 0)? "Ulaz besplatan" : "Cena: " . $data->price . "rsd"}}</span>

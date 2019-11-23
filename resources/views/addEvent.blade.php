@@ -89,7 +89,7 @@
         {!! Form::text('ticket', null, ['class' => 'form-control', 'placeholder' => 'www.kupovina.karata']) !!}
         
         {!! Form::label('price', 'Cena (RSD)') !!}
-        {!! Form::number('price', 0, ['class' => 'form-control', 'step' => '0.1']) !!}
+        {!! Form::number('price', 0, ['class' => 'form-control', 'step' => '10', 'min' => '0']) !!}
 
         {!! Form::label('price', 'Izaberite sliku događaja') !!}
         <input type="file" name="images[]" multiple>
