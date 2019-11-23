@@ -82,6 +82,30 @@ nav a:focus {
   outline: none;
 }
 
+nav .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .right i.material-icons {
+  padding-right: 1rem;
+  color: var(--color-fg);
+  font-size: 2rem;
+}
+
+nav .right i.material-icons:hover {
+  color: var(--color-fg-focus);
+}
+
 nav #search-icon {
   -ms-flex-item-align: end;
       align-self: flex-end;

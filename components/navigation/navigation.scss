@@ -52,6 +52,21 @@ nav {
       outline: none;
     }
   }
+
+  .right {
+    display: flex;
+    align-self: flex-end;
+    justify-content: flex-end;
+    align-items: center;
+    i.material-icons {
+      padding-right: 1rem;
+      color: $color-fg;
+      font-size: 2rem;
+      &:hover {
+        color: $color-fg-focus;
+      }
+    }
+  }
   #search-icon {
     align-self: flex-end;
     div {
