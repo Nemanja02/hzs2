@@ -10,7 +10,7 @@
   <?php include 'components/navigation.html'; ?>
   <div class="event">
     <div class="main">
-      <img src="/assets/images/deadmau5.jpg" alt="">
+      <img src="assets/images/deadmau5.jpg" alt="">
       <div class="body">
         <table></table>
         <span class="name">Lol1</span>
