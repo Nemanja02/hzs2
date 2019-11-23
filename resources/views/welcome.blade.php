@@ -44,8 +44,8 @@
         <li><a href="#">123</a></li>
       </ul>
       <div class="right">
-        <span id="search-icon">
-          <div tabindex="0">
+        <span id="search-icon" tabindex="0">
+          <div>
             <span>search</span>
             <input type="text" name="search" id="search" />
           </div>
@@ -57,7 +57,7 @@
   </header>
   <script src="{{ asset('js/hamburger.js') }}"></script>
 
-  <div class="banner" style="background: url({{ asset('assets/concert-photo.jpg') }})">
+  <div class="banner" style="background-image: url({{ asset('assets/concert-photo.jpg') }}); backround-size:cover">
     <div>
       <h1>Najbolja zabava u gradu</h1>
       <h2>Sve na jednom mestu</h2>

@@ -44,8 +44,8 @@
         <li><a href="#">123</a></li>
       </ul>
       <div class="right">
-        <span id="search-icon">
-          <div tabindex="0">
+        <span id="search-icon" tabindex="0">
+          <div>
             <span>search</span>
             <input type="text" name="search" id="search" />
           </div>
