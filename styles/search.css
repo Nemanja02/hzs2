@@ -13,7 +13,7 @@
   --color-fg: #121212;
   --color-fg-focus: #555555;
   --color-shadow: rgba(0, 0, 0, 0.3);
-  --color-primary: rgb(95, 145, 210);
+  --color-primary: rgb(34, 74, 126);
 }
 
 .cards {
@@ -42,6 +42,8 @@
   -webkit-box-shadow: 7px 7px 20px var(--color-shadow);
           box-shadow: 7px 7px 20px var(--color-shadow);
   position: relative;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .cards .card img {
@@ -117,5 +119,12 @@
 .cards .card .links a:focus {
   border-color: var(--color-primary);
   color: var(--color-primary);
+}
+
+.cards .card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 7px 7px 35px var(--color-shadow);
+          box-shadow: 7px 7px 35px var(--color-shadow);
 }
 /*# sourceMappingURL=search.css.map */

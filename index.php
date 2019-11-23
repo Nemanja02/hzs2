@@ -2,12 +2,12 @@
 <html lang="sr">
 
 <head>
-  <?php include 'components/head/head.html'; ?>
-  <link rel="stylesheet" href="styles/index/index.css" />
+  <?php include 'components/head.html'; ?>
+  <link rel="stylesheet" href="styles/index.css" />
 </head>
 
 <body onload="themeLoad()">
-  <?php include 'components/navigation/navigation.html'; ?>
+  <?php include 'components/navigation.html'; ?>
   <div class="banner">
     <div>
       <h1>Najbolja zabava u gradu</h1>
