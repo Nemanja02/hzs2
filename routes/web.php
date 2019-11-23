@@ -6,10 +6,12 @@ Route::get('/', function () {
 
 Route::get('/events', 'EventsController@showAll')->name('events');
 
+Route::get('/results', 'EventsController@searchResult')->name('results');
+
 Route::get('/event/{id}', 'EventsController@showEvent')->name('preview');
 
 Route::get('/events/new', 'EventsController@showForm')->name('event.new');
 
 Route::post('/events/add', 'EventsController@addEvent')->name('event.create');
 
-Route::post('/events/search', 'EventsController@searchEvent')->name('event.create');
+Route::post('/events/search', 'EventsController@searchEvents')->name('event.search');

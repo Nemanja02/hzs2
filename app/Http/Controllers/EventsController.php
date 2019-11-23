@@ -23,6 +23,14 @@ class EventsController extends Controller {
         return view('addEvent');
     }
 
+    public function searchResult() {
+        return view("results");
+    }
+
+    public function searchEvents(Request $req) {
+        return redirect()->route('results')->with(['data' => Event::searchEvents($req->get('search'))]);
+    }
+
     public function addEvent(Request $req) {
         $city_id = Location::addLocation($req->get('loc'));
         $id = Event::createEvent($req);

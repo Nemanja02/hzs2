@@ -58,7 +58,7 @@
   </header>
   <script src="{{ asset('js/hamburger.js') }}"></script>
   <div class="cards">
-    @foreach($events as $event)
+    @foreach(Session::get('data') as $event)
     <div class="card">
       <img src='{{ asset("image/" . $event->images[0]) }}' alt="">
       <i class="material-icons">mic</i>
