@@ -17,11 +17,11 @@
   <link rel="stylesheet" href="{{ asset('styles/global.css') }}" />
   <link rel="stylesheet" href="{{ asset('styles/hamburger.css') }}" />
   <title>{{ config('app.name') }}</title>
-  <link rel="stylesheet" href="{{ asset('styles/index.css') }}" />
+  <link rel="stylesheet" href="{{ asset('styles/search.css') }}" />
 </head>
 
 <body onload="themeLoad()">
-  <link rel="stylesheet" href="{{ asset('styles/navigation.css') }}" />
+<link rel="stylesheet" href="{{ asset('styles/navigation.css') }}" />
   <header>
     <div class="mobile-nav">
       <span>mape.</span>
@@ -56,20 +56,13 @@
     </nav>
   </header>
   <script src="{{ asset('js/hamburger.js') }}"></script>
-
-  <div class="banner" style="background: url({{ asset('assets/concert-photo.jpg') }})">
-    <div>
-      <h1>Najbolja zabava u gradu</h1>
-      <h2>Sve na jednom mestu</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="{{ asset('images/dedmau5.jpg') }}" alt="">
+      <i class="material-icons">mic</i>
+      <div class="body"><span class="name">Lol1</span><span class="about">Lololol1</span></div>
+      <div class="links"><a class="buy" href="preview.php">Naručite odmah</a></div>
     </div>
-  </div>
-  <!-- <div class="float">
-    <i class="material-icons">nature</i>
-    <i class="material-icons">speaker</i>
-    <i class="material-icons">local_play</i>
-  </div> -->
-  <div class="lol">
-
   </div>
 </body>
 

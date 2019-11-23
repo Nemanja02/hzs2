@@ -32,10 +32,13 @@
 
         {!! Form::label('end', 'Ending time') !!}
         {!! Form::date('end', null, ['class' => 'form-control']) !!}
+
+        {!! Form::label('ticket', 'Ticket Link') !!}
+        {!! Form::text('ticket', null, ['class' => 'form-control']) !!}
         
         {!! Form::label('price', 'Price (RSD)') !!}
         {!! Form::number('price', 0, ['class' => 'form-control', 'step' => '0.1']) !!}
-        {!! Form::file('image'); !!}
+        <input type="file" name="images[]" multiple>
 
         {!! Form::textarea('desc', null, ['class' => 'form-control']) !!}
 
