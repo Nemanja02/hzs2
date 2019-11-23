@@ -59,10 +59,10 @@
   <div class="cards">
     @foreach($events as $event)
     <div class="card">
-      <img src="{{ asset('assets/deadmau5.jpg') }}" alt="">
+      <img src='{{ asset("image/" . $event->images[0]) }}' alt="">
       <i class="material-icons">mic</i>
-      <div class="body"><span class="name">{{ $event->name }}</span><span class="about"></span></div>
-      <div class="links"><a class="buy" href="preview.php">Naručite odmah</a></div>
+      <div class="body"><span class="name">{{ $event->name }}</span><span class="about">{{ $event->city_name }}, {{ $event->dist }} km</span></div>
+      <div class="links"><a class="buy" href="{{ $event->ticket }}">Naručite odmah</a></div>
     </div>
     @endforeach
   </div>
