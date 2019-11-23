@@ -66,11 +66,13 @@
         {!! 
             Form::select('type', array(
                 'Koncert' => 'Koncert',
-                'Festival' => 'Festival',
+                'Music Festival' => 'Music Festival',
                 'Predstava' => 'Predstava',
                 'Zurka' => 'Zurka',
                 'Sajam' => 'Sajam',
-                'Izlozba' => 'Izlozba'
+                'Izlozba' => 'Izlozba',
+                'Film' => 'Film',
+                'Masterclass' => 'Masterclass'
             )); 
         !!}
 

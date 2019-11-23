@@ -8,12 +8,51 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
 
+    private static function getIcon($type) {
+        $icons = array(
+            'Koncert' => 'music_note',
+            'Film' => 'movie',
+            'Predstava' => 'theaters',
+            'Sajam' => 'bussines',
+            'Izlozba' => 'pallete',
+            'Masterclass' => 'brush',
+            'Music Festival' => 'speaker',
+            'Zurka' => 'speaker'
+        );
+        return $icons[$type];
+    }
+
     public static function getAllEvents() {
+        $data = DB::select('SELECT * FROM events LEFT JOIN (cities) ON (events.city_id = cities.city_id)');
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $ip = "212.200.181.208";
+        for ($i = 0; $i < count($data); $i++) {
+            $location = json_decode(file_get_contents('http://ip-api.com/json/'.$ip));
+            $dist = round(Location::distance($data[$i]->lat, $data[$i]->long, $location->lat, $location->lon, "K"));
+            $data[$i]->dist = $dist;
+            $data[$i]->images = Event::getImages($data[$i]->id);
+            $type = $data[$i]->type;
+            $data[$i]->icon = Event::getIcon($type);
+        }
+        return $data;
+    }
+
+    public static function searchEvents() {
         return DB::select('SELECT * FROM events LEFT JOIN (cities) ON (events.city_id = cities.city_id)');
     }
 
     public static function getEvent($id) {
-        return DB::select("SELECT * FROM events LEFT JOIN (cities) ON (events.city_id = cities.city_id) WHERE id = $id")[0];
+        $data = DB::select("SELECT * FROM events LEFT JOIN (cities) ON (events.city_id = cities.city_id) WHERE id = $id")[0];
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $ip = "212.200.181.208";
+        $location = json_decode(file_get_contents('http://ip-api.com/json/'.$ip));
+        $dist = round(Location::distance($data->lat, $data->long, $location->lat, $location->lon, "K"));
+        $data->dist = $dist;
+        $data->images = Event::getImages($data->id);
+        $type = $data->type;
+        $data->icon = Event::getIcon($type);
+
+        return $data;
     }
 
     public static function createEvent($req) {

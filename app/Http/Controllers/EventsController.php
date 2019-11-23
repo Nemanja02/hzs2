@@ -16,17 +16,7 @@ class EventsController extends Controller {
     }
 
     public function showAll() {
-        $data = Event::getAllEvents();
-        $ip = $_SERVER['REMOTE_ADDR'];
-        $ip = "212.200.181.208";
-        for ($i = 0; $i < count($data); $i++) {
-            $location = json_decode(file_get_contents('http://ip-api.com/json/'.$ip));
-            $dist = round(Location::distance($data[$i]->lat, $data[$i]->long, $location->lat, $location->lon, "K"));
-            $data[$i]->dist = $dist;
-            $data[$i]->images = Event::getImages($data[$i]->id);
-        }
-
-        return view('events', ['events' => $data]);
+        return view('events', ['events' => Event::getAllEvents()]);
     }
 
     public function showForm() {
