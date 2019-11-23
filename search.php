@@ -2,18 +2,18 @@
 <html lang="sr">
 
 <head>
-  <?php include 'components/head/head.html'; ?>
-  <link rel="stylesheet" href="styles/search/search.css" />
+  <?php include 'components/head.html'; ?>
+  <link rel="stylesheet" href="styles/search.css" />
 </head>
 
 <body onload="themeLoad()">
-  <?php include 'components/navigation/navigation.html'; ?>
+  <?php include 'components/navigation.html'; ?>
   <div class="cards">
     <div class="card">
       <img src="/assets/images/deadmau5.jpg" alt="">
       <i class="material-icons">mic</i>
       <div class="body"><span class="name">Lol1</span><span class="about">Lololol1</span></div>
-      <div class="links"><a class="buy" href="#">Naručite odmah</a></div>
+      <div class="links"><a class="buy" href="/preview.php">Naručite odmah</a></div>
     </div>
   </div>
 </body>

@@ -20,6 +20,7 @@
     background-color: $color-card-bg;
     box-shadow: 7px 7px 20px $color-shadow;
     position: relative;
+    transition: all 0.1s ease-in-out;
 
     img {
       width: 100%;
@@ -75,6 +76,12 @@
           color: $color-primary;
         }
       }
+    }
+
+    &:hover {
+      transform: scale(1.05);
+
+      box-shadow: 7px 7px 35px $color-shadow;
     }
   }
 }
