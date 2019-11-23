@@ -112,4 +112,9 @@
   -webkit-box-shadow: 7px 7px 35px var(--color-shadow);
           box-shadow: 7px 7px 35px var(--color-shadow);
 }
+
+a {
+  color: var(--color-fg);
+  text-decoration: none;
+}
 /*# sourceMappingURL=search.css.map */

@@ -38,7 +38,7 @@
     </div>
     <nav id="nav">
       <ul>
-        <li><a href="./">mape.</a></li>
+        <li><a href="{{ route('/') }}">mape.</a></li>
         <li><a href="#">about</a></li>
         <li><a href="#">123</a></li>
         <li><a href="#">123</a></li>
