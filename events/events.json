@@ -1,0 +1,58 @@
+{
+  "events": [
+    {
+      "id": "0",
+      "title": "deadmau5 koncert",
+      "type": "music",
+      "location": "Stark Arena",
+      "date": "24.11.2019.",
+      "image": "/assets/images/deadmau5.jpg",
+      "price": "3000"
+    },
+    {
+      "id": "1",
+      "title": "Sabaton koncert",
+      "type": "music",
+      "location": "BelExpo Centar",
+      "date": "08.12.2019.",
+      "image": "/assets/images/deadmau5.jpg",
+      "price": "3500"
+    },
+    {
+      "id": "2",
+      "title": "predstava Romeo i Julija",
+      "type": "theater",
+      "location": "Narodno pozoriste",
+      "date": "02.12.2019.",
+      "image": "/assets/images/deadmau5.jpg",
+      "price": "500"
+    },
+    {
+      "id": "3",
+      "title": "film Frozen 2",
+      "type": "movie",
+      "location": "Cineplexx",
+      "date": "20.12.2019.",
+      "image": "/assets/images/deadmau5.jpg",
+      "price": "600"
+    },
+    {
+      "id": "4",
+      "title": "Exit Festival",
+      "type": "festival",
+      "location": "Novi Sad",
+      "date": "10.6.2020.",
+      "image": "/assets/images/deadmau5.jpg",
+      "price": "5000"
+    },
+    {
+      "id": "5",
+      "title": "Izlozba Nadezda Petrovic",
+      "type": "art",
+      "location": "Cacak",
+      "date": "25.12.2019.",
+      "image": "/assets/images/deadmau5.jpg",
+      "price": "300"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+.dark {
+  --color-bg: #121212;
+  --color-card-bg: lighten(#121212, 5%);
+  --color-fg: #ffffff;
+  --color-fg-focus: #bbbbbb;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-primary: rgb(95, 145, 210);
+}
+
+.light {
+  --color-bg: #ffffff;
+  --color-card-bg: #fff;
+  --color-fg: #121212;
+  --color-fg-focus: #555555;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: rgb(34, 74, 126);
+}
+
+.event {
+  position: fixed;
+  width: 100%;
+  height: calc(100% - 6rem);
+  top: 6rem;
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: var(--color-fg);
+}
+
+.event .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.event .main i.material-icons {
+  color: var(--color-fg);
+  font-size: 5rem;
+}
+
+.event .main .body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2.5rem;
+}
+
+.event .main .body .name {
+  font-size: 4rem;
+}
+
+.event .main .body .price {
+  font-size: 2rem;
+}
+
+.event .main img {
+  width: 600px;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+  border-radius: 1rem;
+}
+
+.event .about {
+  margin-top: 2em;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-indent: 5rem;
+}
+/*# sourceMappingURL=preview.css.map */

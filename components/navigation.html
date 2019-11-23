@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="styles/navigation.css" />
+<header>
+  <div class="mobile-nav">
+    <span>mape.</span>
+    <div
+      onclick="toggleBurger()"
+      id="burger"
+      class="hamburger hamburger--collapse"
+      type="button"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </div>
+  </div>
+  <nav id="nav">
+    <ul>
+      <li><a href="./">mape.</a></li>
+      <li><a href="#">about</a></li>
+      <li><a href="#">123</a></li>
+      <li><a href="#">123</a></li>
+    </ul>
+    <div class="right">
+      <span id="search-icon">
+        <div tabindex="0">
+          <span>search</span>
+          <input type="text" name="search" id="search" />
+        </div>
+        <i class="material-icons">search</i>
+      </span>
+      <i class="material-icons" onclick="changeTheme()">brightness_6</i>
+    </div>
+  </nav>
+</header>
+<script src="components/navigation/hamburger.js"></script>

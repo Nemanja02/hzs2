@@ -1,0 +1,24 @@
+.dark {
+  --color-bg: #121212;
+  --color-card-bg: lighten(#121212, 5%);
+  --color-fg: #ffffff;
+  --color-fg-focus: #bbbbbb;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-primary: rgb(95, 145, 210);
+}
+
+.light {
+  --color-bg: #ffffff;
+  --color-card-bg: #fff;
+  --color-fg: #121212;
+  --color-fg-focus: #555555;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: rgb(34, 74, 126);
+}
+
+$color-bg: var(--color-bg);
+$color-card-bg: var(--color-card-bg);
+$color-fg: var(--color-fg);
+$color-fg-focus: var(--color-fg-focus);
+$color-shadow: var(--color-shadow);
+$color-primary: var(--color-primary);
