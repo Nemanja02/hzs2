@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class EventsController extends Controller {
+
+    public function showEvent($id) {
+        return view('preview', ['data' => Event::getEvent($id)]);
+    }
+
     public function showAll() {
         $data = Event::getAllEvents();
         $ip = $_SERVER['REMOTE_ADDR'];
@@ -41,7 +46,7 @@ class EventsController extends Controller {
                 $file->move('image',$name);
             }
         }
-        
+
         return redirect()->route('event.new');
     }
 }

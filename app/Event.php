@@ -13,7 +13,7 @@ class Event extends Model
     }
 
     public static function getEvent($id) {
-        return DB::select("SELECT * FROM events LEFT JOIN (cities) ON (events.city_id = cities.city_id AND events.id = $id)");
+        return DB::select("SELECT * FROM events LEFT JOIN (cities) ON (events.city_id = cities.city_id) WHERE id = $id")[0];
     }
 
     public static function createEvent($req) {
