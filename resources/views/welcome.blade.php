@@ -38,9 +38,9 @@
     </div>
     <nav id="nav">
       <ul>
-        <li><a href="./">mape.</a></li>
-        <li><a href="#">about</a></li>
-        <li><a href="#">123</a></li>
+        <li><a href="{{route('index')}}">mape.</a></li>
+        <li><a href="{{route('events')}}">događaji</a></li>
+        <li><a href="{{route('event.new')}}">dodaj</a></li>
         <li><a href="#">123</a></li>
       </ul>
       <div class="right">

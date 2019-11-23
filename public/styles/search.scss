@@ -46,7 +46,7 @@
       line-height: 1.5;
       margin-bottom: 3rem;
       * {
-        @include selectable;
+        @include unselectable;
       }
 
       .name {
@@ -87,4 +87,9 @@
       box-shadow: 7px 7px 35px $color-shadow;
     }
   }
+}
+
+a {
+  color: $color-fg;
+  text-decoration: none;
 }

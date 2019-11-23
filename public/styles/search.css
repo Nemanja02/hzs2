@@ -61,10 +61,10 @@
 }
 
 .cards .card .body * {
-  -webkit-user-select: all;
-  -moz-user-select: all;
-  -ms-user-select: all;
-  user-select: all;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .cards .card .body .name {
@@ -111,5 +111,10 @@
           transform: scale(1.05);
   -webkit-box-shadow: 7px 7px 35px var(--color-shadow);
           box-shadow: 7px 7px 35px var(--color-shadow);
+}
+
+a {
+  color: var(--color-fg);
+  text-decoration: none;
 }
 /*# sourceMappingURL=search.css.map */
