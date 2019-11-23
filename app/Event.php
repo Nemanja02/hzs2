@@ -66,7 +66,7 @@ class Event extends Model
         return $data;
     }
 
-    public static function createEvent($req) {
+    public static function createEvent($req, $city_id) {
         DB::table('events')->insert([
             'name' => $req->get('name'),
             'type' => $req->get('type'),
