@@ -1,3 +1,21 @@
+.dark {
+  --color-bg: #121212;
+  --color-card-bg: lighten(#121212, 5%);
+  --color-fg: #ffffff;
+  --color-fg-focus: #bbbbbb;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-primary: rgb(95, 145, 210);
+}
+
+.light {
+  --color-bg: #ffffff;
+  --color-card-bg: #fff;
+  --color-fg: #121212;
+  --color-fg-focus: #555555;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: rgb(95, 145, 210);
+}
+
 .cards {
   max-width: 1200px;
   margin: 0 auto;
@@ -8,7 +26,7 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding-top: 8rem;
-  color: #ffffff;
+  color: var(--color-fg);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -16,13 +34,13 @@
 
 .cards .card {
   border-radius: 0.5rem;
-  color: #ffffff;
+  color: var(--color-fg);
   margin: 1rem;
   width: 100%;
   max-width: 350px;
-  background-color: #1f1f1f;
-  -webkit-box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.25);
-          box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-card-bg);
+  -webkit-box-shadow: 7px 7px 20px var(--color-shadow);
+          box-shadow: 7px 7px 20px var(--color-shadow);
   position: relative;
 }
 
@@ -37,7 +55,7 @@
 .cards .card i.material-icons {
   font-size: 1.75rem;
   padding: 0.5rem;
-  background-color: #121212;
+  background-color: var(--color-bg);
   border-radius: 50%;
   position: absolute;
   right: 1rem;
@@ -81,23 +99,23 @@
 }
 
 .cards .card .links .buy {
-  border: white 1px solid;
+  border: var(--color-fg) 1px solid;
   border-radius: 0.25rem;
   padding: 0.5rem;
 }
 
 .cards .card .links a {
-  color: #ffffff;
+  color: var(--color-fg);
   text-decoration: none;
 }
 
 .cards .card .links a:hover {
-  border-color: #999999;
-  color: #999999;
+  border-color: var(--color-fg-focus);
+  color: var(--color-fg-focus);
 }
 
 .cards .card .links a:focus {
-  border-color: #5f91d2;
-  color: #5f91d2;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 /*# sourceMappingURL=search.css.map */

@@ -1,3 +1,21 @@
+.dark {
+  --color-bg: #121212;
+  --color-card-bg: lighten(#121212, 5%);
+  --color-fg: #ffffff;
+  --color-fg-focus: #bbbbbb;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-primary: rgb(95, 145, 210);
+}
+
+.light {
+  --color-bg: #ffffff;
+  --color-card-bg: #fff;
+  --color-fg: #121212;
+  --color-fg-focus: #555555;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: rgb(95, 145, 210);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,11 +25,14 @@
 }
 
 html {
-  background-color: #121212;
   width: 100%;
   height: 100%;
   font-family: Montserrat, sans-serif;
   font-size: 16px;
+}
+
+body {
+  background-color: var(--color-bg);
 }
 
 h1 {

@@ -5,7 +5,7 @@ header {
   position: fixed;
   background-color: $color-bg;
   width: 100%;
-  box-shadow: 0 0.5rem 0.5rem rgba($color-bg, 0.3);
+  box-shadow: 0 0.5rem 0.5rem $color-shadow;
 }
 .mobile-nav {
   padding: 1rem 2rem;
@@ -50,6 +50,21 @@ nav {
     &:focus {
       color: $color-primary;
       outline: none;
+    }
+  }
+
+  .right {
+    display: flex;
+    align-self: flex-end;
+    justify-content: flex-end;
+    align-items: center;
+    i.material-icons {
+      padding-right: 1rem;
+      color: $color-fg;
+      font-size: 2rem;
+      &:hover {
+        color: $color-fg-focus;
+      }
     }
   }
   #search-icon {

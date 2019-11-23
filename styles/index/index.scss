@@ -27,10 +27,10 @@
   width: 800px;
   max-width: 100%;
   height: 24rem;
-  background-color: lighten($color-bg, 5%);
+  background-color: $color-card-bg;
   right: 0;
   padding: 1rem;
-  box-shadow: 10px 10px 10px rgba(#000, 0.3);
+  box-shadow: 10px 10px 10px $color-shadow;
 
   i.material-icons {
     color: $color-fg;
