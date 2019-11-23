@@ -13,7 +13,7 @@ class Event extends Model
             'Koncert' => 'music_note',
             'Film' => 'movie',
             'Predstava' => 'theaters',
-            'Sajam' => 'bussines',
+            'Sajam' => 'business',
             'Izlozba' => 'pallete',
             'Masterclass' => 'brush',
             'Music Festival' => 'speaker',

@@ -46,7 +46,7 @@
       line-height: 1.5;
       margin-bottom: 3rem;
       * {
-        @include selectable;
+        @include unselectable;
       }
 
       .name {

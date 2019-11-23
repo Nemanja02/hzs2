@@ -45,11 +45,34 @@ h2 {
   font-size: 2.5rem;
 }
 
+a {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 i.material-icons,
 img {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-fg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-fg-focus);
 }
 /*# sourceMappingURL=global.css.map */

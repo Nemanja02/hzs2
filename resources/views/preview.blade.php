@@ -38,9 +38,9 @@
     </div>
     <nav id="nav">
       <ul>
-        <li><a href="./">mape.</a></li>
-        <li><a href="#">about</a></li>
-        <li><a href="#">123</a></li>
+        <li><a href="{{route('index')}}">mape.</a></li>
+        <li><a href="{{route('events')}}">događaji</a></li>
+        <li><a href="{{route('event.new')}}">dodaj</a></li>
         <li><a href="#">123</a></li>
       </ul>
       <div class="right">
@@ -65,7 +65,7 @@
         <span class="price">{{($data->price == 0)? "Ulaz besplatan" : "Cena: " . $data->price . "rsd"}}</span>
         <span class="price">Duzina Trajanja: 2h</span>
       </div>
-      <i class="material-icons">mic</i>
+      <i class="material-icons">{{$data->icon}}</i>
     </div>
 
     <span class="about">{{$data->description}}</span>
