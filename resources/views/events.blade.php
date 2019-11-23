@@ -61,7 +61,7 @@
     <div class="card">
       <img src="{{ asset('assets/deadmau5.jpg') }}" alt="">
       <i class="material-icons">mic</i>
-      <div class="body"><span class="name">{{ $event->name }}</span><span class="about">Lololol1</span></div>
+      <div class="body"><span class="name">{{ $event->name }}</span><span class="about"></span></div>
       <div class="links"><a class="buy" href="preview.php">Naručite odmah</a></div>
     </div>
     @endforeach
