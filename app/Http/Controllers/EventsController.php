@@ -15,6 +15,10 @@ class EventsController extends Controller {
         return view('preview', ['data' => Event::getEvent($id)]);
     }
 
+    public function editEvent($id) {
+        return view('edit', ['data' => Event::getEvent($id)]);
+    }
+
     public function showAll(Request $req) {
         $data = $req->query();
         return view('events', ['events' => Event::getAllEvents($data)]);
@@ -45,6 +49,14 @@ class EventsController extends Controller {
                 $file->move('image',$name);
             }
         }
+
+        return redirect()->route('event.new');
+    }
+
+    public function applyEdit(Request $req) {
+        if ($req->get('lat') !== null && $req->get('lon') !== null)
+            $city_id = Location::addLocation($req->get('loc_name'), $req->get('lat'), $req->get('lon'));
+        $id = Event::editEvent($req);
 
         return redirect()->route('event.new');
     }

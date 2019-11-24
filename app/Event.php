@@ -65,6 +65,19 @@ class Event extends Model
         return DB::select('SELECT id FROM events WHERE id = id ORDER BY id DESC LIMIT 1')[0]->id;
     }
 
+    public static function editEvent($req) {
+        $query = DB::table('events')->where('id', '=', $req->get('id'))->update([
+            'name' => $req->get('name'),
+            'type' => $req->get('type'),
+            'price' => $req->get('price'),
+            'description' => $req->get('desc'),
+            'starting_time' => strtotime($req->get('start')),
+            'ending_time' => strtotime($req->get('end')),
+            'ticket' => $req->get('ticket')
+        ]);
+        return DB::select('SELECT id FROM events WHERE id = id ORDER BY id DESC LIMIT 1')[0]->id;
+    }
+
     public static function wrapEvent($data, $params) {
         $ip = $_SERVER['REMOTE_ADDR'];
         $ip = "212.200.181.208";

@@ -72,6 +72,7 @@
     @if ($event->show)
     <a href="{{route('preview', $event->id)}}">
       <div class="card">
+      <img src='{{ asset("image/" . $event->images[0]) }}' alt="">
         <i class="material-icons">{{$event->icon}}</i>
         <div class="body">
           <span class="name">{{ $event->name }}</span>

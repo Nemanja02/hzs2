@@ -12,6 +12,8 @@ Route::get('/event/{id}', 'EventsController@showEvent')->name('preview');
 
 Route::get('/event/edit/{id}', 'EventsController@editEvent')->name('event.edit');
 
+Route::post('/event/edit/apply', 'EventsController@applyEdit')->name('event.edit.apply');
+
 Route::get('/events/new', 'EventsController@showForm')->name('event.new');
 
 Route::post('/events/add', 'EventsController@addEvent')->name('event.create');
