@@ -72,9 +72,6 @@
     @if ($event->show)
     <a href="{{route('preview', $event->id)}}">
       <div class="card">
-<<<<<<< HEAD
-=======
->>>>>>> 143ec77434932d670874f7b8f776a91aad4f76d3
         <i class="material-icons">{{$event->icon}}</i>
         <div class="body">
           <span class="name">{{ $event->name }}</span>
