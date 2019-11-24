@@ -13,6 +13,27 @@
           align-items: center;
 }
 
+.form .naslov {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form .naslov i.material-icons {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.form .naslov i.material-icons:hover {
+  color: var(--color-fg-focus);
+}
+
 .form form {
   padding: 2rem;
   width: 100%;

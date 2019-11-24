@@ -41,7 +41,10 @@
         padding-bottom: 1rem;
         padding-right: 1rem;
         font-size: 1.5rem;
+        align-items: center;
+
         .buy {
+          margin-left: 1rem;
           border: $color-fg 1px solid;
           border-radius: 0.25rem;
           padding: 0.5rem;

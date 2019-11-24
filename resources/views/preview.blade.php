@@ -77,7 +77,10 @@
             Datum završetka: {{ date('d.m.Y. H:i', $data->ending_time) }}
           </span>
         @endif
-        <div class="links"><a class="buy" href="{{ $data->ticket }}">Naručite odmah</a></div>
+        <div class="links">
+          <a href="{{ route('event.edit', $data->id) }}">Izmeni</a>
+          <a class="buy" href="{{ $data->ticket }}" target="_blank">Naručite odmah</a>
+        </div>
       </div>
       <i class="material-icons">{{$data->icon}}</i>
     </div>
