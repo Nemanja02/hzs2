@@ -63,4 +63,42 @@
 ::placeholder {
   color: var(--color-fg-focus);
 }
+
+#results {
+  background-color: var(--color-card-bg);
+  padding: 1rem;
+  padding-bottom: 0;
+  margin-bottom: 1rem;
+  border-radius: .5rem;
+  -webkit-box-shadow: 2px 2px 7px var(--color-shadow);
+          box-shadow: 2px 2px 7px var(--color-shadow);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#results:empty {
+  display: none;
+}
+
+#results span:last-of-type {
+  border: none;
+  padding-bottom: 0;
+}
+
+#result {
+  color: var(--color-fg);
+  cursor: pointer;
+  width: 100%;
+  padding-bottom: 1rem;
+  border-bottom: 1px var(--color-bg) solid;
+}
+
+#result:hover {
+  color: var(--color-fg-focus);
+}
 /*# sourceMappingURL=new.css.map */

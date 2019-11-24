@@ -1,6 +1,6 @@
 .dark {
   --color-bg: #121212;
-  --color-card-bg: lighten(#121212, 5%);
+  --color-card-bg: #202020;
   --color-fg: #ffffff;
   --color-fg-focus: #bbbbbb;
   --color-shadow: rgba(0, 0, 0, 0.5);
