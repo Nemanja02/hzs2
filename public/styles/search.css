@@ -69,12 +69,21 @@
   transition: all 0.1s ease-in-out;
 }
 
-.cards .card img {
+.cards .card .img {
+  position: relative;
   width: 100%;
   height: 12rem;
+  border-radius: 0.5em 0.5em 0 0;
+  overflow: hidden;
+}
+
+.cards .card .img img {
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 0.5em 0.5em 0 0;
 }
 
 .cards .card i.material-icons {
@@ -152,6 +161,11 @@
           transform: scale(1.05);
   -webkit-box-shadow: 7px 7px 35px var(--color-shadow);
           box-shadow: 7px 7px 35px var(--color-shadow);
+}
+
+.cards .card:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 a {

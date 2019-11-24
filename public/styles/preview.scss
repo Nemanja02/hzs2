@@ -33,6 +33,33 @@
         font-size: 2rem;
         text-indent: 2rem;
       }
+
+      .links {
+        width: 100%;
+        display: flex;
+        margin: 1rem;
+        padding-bottom: 1rem;
+        padding-right: 1rem;
+        font-size: 1.5rem;
+        .buy {
+          border: $color-fg 1px solid;
+          border-radius: 0.25rem;
+          padding: 0.5rem;
+        }
+        a {
+          color: $color-fg;
+          text-decoration: none;
+          &:hover {
+            border-color: $color-fg-focus;
+            color: $color-fg-focus;
+          }
+  
+          &:focus {
+            border-color: $color-primary;
+            color: $color-primary;
+          }
+        }
+      }
     }
     img {
       width: 600px;

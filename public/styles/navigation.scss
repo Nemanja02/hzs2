@@ -59,6 +59,7 @@ nav {
     justify-content: flex-end;
     align-items: center;
     i.material-icons {
+      cursor: pointer;
       padding-right: 1rem;
       color: $color-fg;
       font-size: 2rem;

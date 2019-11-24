@@ -61,8 +61,22 @@
       <img src="{{asset('image/' . $data->images[0])}}" alt="{{$data->name}}">
       <div class="body">
         <span class="name">{{$data->name}}</span>
-        <span class="price">{{($data->price == 0)? "Ulaz besplatan" : "Cena: " . $data->price . " rsd"}}</span>
-        <span class="price">Duzina Trajanja: 2h</span>
+        <span class="price">{{($data->price == 0)? "Ulaz besplatan" : "Cena: " . $data->price . " rsd"}}</span> 
+        <span>
+          {{
+            (date('d.m.Y.', $data->starting_time) == date('d.m.Y.', $data->ending_time))?
+              "<span>Datum događaja: " . date('d.m.Y.', $data->starting_time) . "</span>" :
+              "Datum događaja: " . date('d.m.Y.', $data->starting_time) . "-" . date('d.m.Y.', $data->ending_time)
+          }}
+        </span>
+        <span>
+        {{
+            (date('d.m.Y.', $data->starting_time) == date('d.m.Y.', $data->ending_time))?
+              "Vreme: " . date('H:i', $data->starting_time) . "-" . date('H:i', $data->ending_time):
+              "Vreme: " . date('d.m.Y.', $data->starting_time) . "-" . date('d.m.Y.', $data->ending_time)
+          }}
+        </span>
+        <div class="links"><a class="buy" href="{{ $data->ticket }}">Naručite odmah</a></div>
       </div>
       <i class="material-icons">{{$data->icon}}</i>
     </div>
