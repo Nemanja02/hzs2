@@ -46,7 +46,7 @@ class Event extends Model
 
     public static function getEvent($id) {
         $data = DB::select("SELECT * FROM events LEFT JOIN (cities) ON (events.city_id = cities.city_id) WHERE id = $id");
-        $data = Event::wrapEvent($data)[0];
+        $data = Event::wrapEvent($data, null)[0];
 
         return $data;
     }
