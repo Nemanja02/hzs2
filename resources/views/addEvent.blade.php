@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="{{ asset('styles/hamburger.css') }}" />
   <title>{{ config('app.name') }}</title>
   <link rel="stylesheet" href="{{ asset('styles/new.css') }}" />
+  <link rel="stylesheet" href="{{ asset('styles/jquery.datetimepicker.min.css') }}">
 </head>
 <body onload="themeLoad()">
   <link rel="stylesheet" href="{{ asset('styles/navigation.css') }}" />
@@ -87,10 +88,10 @@
         <input type="hidden" id="lon" name="lon">
 
         {!! Form::label('start', 'Vreme početka') !!}
-        {!! Form::date('start', null, ['class' => 'form-control']) !!}
+        {!! Form::text('start', null, ['class' => 'form-control', 'id' => 'start', 'value' => '2014/03/15 05:06']) !!}
 
         {!! Form::label('end', 'Vreme kraja') !!}
-        {!! Form::date('end', null, ['class' => 'form-control']) !!}
+        {!! Form::text('end', null, ['class' => 'form-control', 'id' => 'end', 'value' => '2014/03/15 05:06']) !!}
 
         {!! Form::label('ticket', 'Link za kupovinu karata') !!}
         {!! Form::text('ticket', null, ['class' => 'form-control', 'placeholder' => 'www.kupovina.karata']) !!}
@@ -137,6 +138,11 @@
             }
         });
 
+    </script>
+    <script src="{{ asset('js/jquery.datetimepicker.full.min.js') }}"></script>
+    <script>
+        jQuery('#end').datetimepicker({theme: 'dark'});
+        jQuery('#start').datetimepicker();
     </script>
   </div>
 </body>
