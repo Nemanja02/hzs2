@@ -45,12 +45,7 @@
       </ul>
       <div class="right">
         <span id="search-icon" tabindex="0">
-          <div>
-            <span>pretraga</span>
-            {!! Form::open(['route' => 'events', 'id' => 'form', 'method' => 'get']) !!}
-            {!! Form::close() !!}
-          </div>
-          <i class="material-icons" id="search">search</i>
+          <i class="material-icons" id="search">s</i>
         </span>
         <i class="material-icons" onclick="changeTheme()">brightness_6</i>
       </div>
