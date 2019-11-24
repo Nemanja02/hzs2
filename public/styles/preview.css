@@ -53,6 +53,38 @@
   text-indent: 2rem;
 }
 
+.event .main .body .links {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  font-size: 1.5rem;
+}
+
+.event .main .body .links .buy {
+  border: var(--color-fg) 1px solid;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+.event .main .body .links a {
+  color: var(--color-fg);
+  text-decoration: none;
+}
+
+.event .main .body .links a:hover {
+  border-color: var(--color-fg-focus);
+  color: var(--color-fg-focus);
+}
+
+.event .main .body .links a:focus {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
 .event .main img {
   width: 600px;
   height: 400px;

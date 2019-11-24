@@ -79,6 +79,7 @@ nav .right {
 }
 
 nav .right i.material-icons {
+  cursor: pointer;
   padding-right: 1rem;
   color: var(--color-fg);
   font-size: 2rem;

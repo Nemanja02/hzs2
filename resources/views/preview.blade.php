@@ -61,8 +61,23 @@
       <img src="{{asset('image/' . $data->images[0])}}" alt="{{$data->name}}">
       <div class="body">
         <span class="name">{{$data->name}}</span>
-        <span class="price">{{($data->price == 0)? "Ulaz besplatan" : "Cena: " . $data->price . " rsd"}}</span>
-        <span class="price">Duzina Trajanja: 2h</span>
+        <span class="price">{{($data->price == 0)? "Ulaz besplatan" : "Cena: " . $data->price . " rsd"}}</span> 
+        @if(date('d.m.Y.', $data->starting_time) == date('d.m.Y.', $data->ending_time))
+          <span>
+            Datum događaja: {{ date('d.m.Y.', $data->starting_time) }}
+          </span>
+          <span>
+            Vreme:  {{ date('H:i', $data->starting_time) }} - {{ date('H:i', $data->ending_time) }} 
+          </span>
+        @else 
+          <span>
+            Datum početka: {{ date('d.m.Y. H:i', $data->starting_time) }}
+          </span>
+          <span>
+            Datum završetka: {{ date('d.m.Y. H:i', $data->ending_time) }}
+          </span>
+        @endif
+        <div class="links"><a class="buy" href="{{ $data->ticket }}">Naručite odmah</a></div>
       </div>
       <i class="material-icons">{{$data->icon}}</i>
     </div>
