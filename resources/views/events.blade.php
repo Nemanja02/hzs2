@@ -63,7 +63,14 @@
       <div class="card">
         <img src='{{ asset("image/" . $event->images[0]) }}' alt="">
         <i class="material-icons">{{$event->icon}}</i>
-        <div class="body"><span class="name">{{ $event->name }}</span><span class="about">{{ $event->city_name }}, {{ $event->dist }} km</span></div>
+        <div class="body">
+          <span class="name">{{ $event->name }}</span>
+          <span class="about">
+            {{ str_replace("%20", " ", $event->city_name) }}, {{ $event->dist }} km 
+            <br />
+            {{($event->price == 0)? "Ulaz besplatan" : "Cena: " . $event->price . " rsd"}}
+          </span>
+        </div>
         <div class="links"><a class="buy" href="{{ $event->ticket }}">Naručite odmah</a></div>
       </div>
     </a>

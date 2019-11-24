@@ -62,7 +62,7 @@
       <img src="{{asset('image/' . $data->images[0])}}" alt="{{$data->name}}">
       <div class="body">
         <span class="name">{{$data->name}}</span>
-        <span class="price">{{($data->price == 0)? "Ulaz besplatan" : "Cena: " . $data->price . "rsd"}}</span>
+        <span class="price">{{($data->price == 0)? "Ulaz besplatan" : "Cena: " . $data->price . " rsd"}}</span>
         <span class="price">Duzina Trajanja: 2h</span>
       </div>
       <i class="material-icons">{{$data->icon}}</i>
