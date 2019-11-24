@@ -82,6 +82,12 @@
             
         </div>
 
+        {!! Form::label('loc_name', 'Ime mesta koje ce se prikazivati') !!}
+        {!! Form::text('loc_name', null, ['class' => 'form-control', 'placeholder' => 'Narodno pozorište', 'id' => 'place']) !!}
+
+        <input type="hidden" id="lat" name="lat">
+        <input type="hidden" id="lon" name="lon">
+
         {!! Form::label('start', 'Vreme početka') !!}
         {!! Form::date('start', null, ['class' => 'form-control']) !!}
 
@@ -107,6 +113,8 @@
         $('body').on('click', '#result', function(){
             $("#place").val($(this).text());
             $("#results").empty();
+            $("#lat").val($(this).attr('lat'));
+            $("#lon").val($(this).attr('lon'));
         });
 
         $("#place").keyup(function(){
@@ -123,8 +131,7 @@
                     $("#results").empty();
                     let limit = (response.length < 5) ? response.length : 5;
                     for (let i = 0; i < limit; i++) {
-                        $("#results").append('<span id="result">' + response[i].display_name + '</span><br>')
-
+                        $("#results").append('<span id="result" lat="' + response[i].lat + '" lon="' + response[i].lon + '">' + response[i].display_name + '</span><br>')
                     }
                 });
             } else {

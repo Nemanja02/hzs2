@@ -7,19 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Location extends Model
 {
-    public static function addLocation($loc) {
-        $appid = "m3Lb7YaF9vxOQOF37nLZ";
-        $appcode = "pWTRm-x6I_4ra-5ziQ1LWg";
-        $new = str_replace(' ', '%20', $loc);
-        $get = json_decode(file_get_contents("https://eu1.locationiq.com/v1/search.php?key=aaa9efdcf97bd5&q=$loc&format=json"));
-        $lat = $get->Response->View[0]->Result[0]->Location->NavigationPosition[0]->Latitude;
-        $long = $get->Response->View[0]->Result[0]->Location->NavigationPosition[0]->Longitude;
-        $country = $get->Response->View[0]->Result[0]->Location->Address->Country;
+    public static function addLocation($display_name, $lat, $lon) {
         DB::table('cities')->insert([
-            'city_name' => $loc,
+            'city_name' => $display_name,
             'lat' => $lat,
-            'long' => $long,
-            'country' => $country
+            'long' => $lon
         ]);
         return DB::select('SELECT city_id FROM cities WHERE city_id = city_id ORDER BY city_id DESC LIMIT 1')[0]->city_id;
     }
