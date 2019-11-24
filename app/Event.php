@@ -22,18 +22,18 @@ class Event extends Model
         return $icons[$type];
     }
 
-    public static function getAllEvents($data) {
+    public static function getAllEvents($params) {
         $query = DB::table('events');
         $query->join('cities', 'events.city_id', '=', 'cities.city_id')->select('events.*', 'cities.*');
-        if (isset($data['query']))
+        if (isset($params['query']))
             $query->where('events.name', 'LIKE', '%'.$data['query'].'%')->orWhere('events.description', 'LIKE', '%'.$data['query'].'%');
-        if (isset($data['maxprice']))
-            $query->where('events.price', '<=', $data['maxprice']);
-            if (isset($data['minprice']))
-            $query->where('events.price', '>=', $data['minprice']);
+        if (isset($params['maxprice']))
+            $query->where('events.price', '<=', $params['maxprice']);
+            if (isset($params['minprice']))
+            $query->where('events.price', '>=', $params['minprice']);
 
         $data = $query->get();
-        $data = Event::wrapEvent($data, $query);
+        $data = Event::wrapEvent($data, $params);
         return $data;
     }
     
@@ -76,10 +76,10 @@ class Event extends Model
             $type = $data[$i]->type;
             $data[$i]->icon = Event::getIcon($type);
         }
-        // if (isset($query['mindist']) || isset($query['maxdist']))
-        //     for ($i = 0; $i < count($data); $i++) {
+        if (isset($query['mindist']) || isset($query['maxdist']))
+            for ($i = 0; $i < count($data); $i++) {
                 
-        //     }
+            }
         return $data;
     }
 
