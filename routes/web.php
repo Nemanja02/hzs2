@@ -6,13 +6,13 @@ Route::get('/', function () {
 
 Route::get('/events', 'EventsController@showAll')->name('events');
 
-Route::get('/results', 'EventsController@searchResult')->name('results');
-
 Route::get('/event/{id}', 'EventsController@showEvent')->name('preview');
 
 Route::get('/event/edit/{id}', 'EventsController@editEvent')->name('event.edit');
 
 Route::post('/event/edit/apply', 'EventsController@applyEdit')->name('event.edit.apply');
+
+Route::get('/event/delete/{id}', 'EventsController@deleteEvent')->name('event.delete');
 
 Route::get('/events/new', 'EventsController@showForm')->name('event.new');
 

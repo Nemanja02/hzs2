@@ -48,7 +48,6 @@
           <div>
             <span>pretraga</span>
             {!! Form::open(['route' => 'events', 'id' => 'form', 'method' => 'get']) !!}
-              <input type="text" name="query" id="" />
             {!! Form::close() !!}
           </div>
           <i class="material-icons" id="search">search</i>
@@ -60,9 +59,28 @@
   <script src="{{ asset('js/hamburger.js') }}"></script>
   <script src="{{ asset('js/search_more.js') }}"></script>
   <div class="search">
-    <input type="text" class="searchInput" placeholder="pretraga..."/>
+  {!! Form::open(['route' => 'events', 'id' => 'form', 'method' => 'get']) !!}
+    <input type="text" class="searchInput" name="query" placeholder="pretraga..."/>
     <i class="material-icons" onclick="toggleMore()">more_horiz</i>
     <i class="material-icons">send</i>
+    <input type="number" name="mindist" id="" />
+    <input type="number" name="maxdist" id="" />
+    <input type="number" name="minprice" id="" />
+    <input type="number" name="maxprice" id="" />
+    {!! Form::label('type', 'Tip događaja') !!}
+        {!! 
+            Form::select('type', array(
+                'Koncert' => 'Koncert',
+                'Music Festival' => 'Music Festival',
+                'Predstava' => 'Predstava',
+                'Zurka' => 'Zurka',
+                'Sajam' => 'Sajam',
+                'Izlozba' => 'Izlozba',
+                'Film' => 'Film',
+                'Masterclass' => 'Masterclass'
+            ), ['name' => 'type']); 
+        !!}
+  {{ Form::close() }}
   </div>
   <div id="more" class="is-active">
 
@@ -100,5 +118,6 @@
       $('#form').submit();
     })
   </script>
+  
 </body>
 </html>
