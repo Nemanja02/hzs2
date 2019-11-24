@@ -4,6 +4,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('index');
 
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
 Route::get('/events', 'EventsController@showAll')->name('events');
 
 Route::get('/event/{id}', 'EventsController@showEvent')->name('preview');

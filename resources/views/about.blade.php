@@ -56,10 +56,9 @@
   </header>
   <script src="{{ asset('js/hamburger.js') }}"></script>
 
-  <div style="text-align: center;">
+  <div style="padding-top: 8rem">
     Tim Daredon je tim programera i dizajnera koji se bave svim stvarima iz IT sveta <br> 
     Od programiranja preko animacije do dizajna zvuka. <br>
-    <iframe width="480" height="270" src="https://www.youtube.com/embed/M3wv_Rf3cRg?controls=0&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
   </div>
 
   <div style="position: absolute; top: 40%; left: 20%;">
