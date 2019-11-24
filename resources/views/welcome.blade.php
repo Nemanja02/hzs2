@@ -45,7 +45,7 @@
       <div class="right">
         <span id="search-icon" tabindex="0">
           <div>
-            <span>search</span>
+            <span>pretraga</span>
             <input type="text" name="search" id="search" />
           </div>
           <i class="material-icons">search</i>

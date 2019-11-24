@@ -15,6 +15,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="{{ asset('styles/global.css') }}" />
   <link rel="stylesheet" href="{{ asset('styles/hamburger.css') }}" />
+  <link rel="stylesheet" href="{{ asset('styles/search_more.css') }}" />
+
   <title>{{ config('app.name') }}</title>
   <link rel="stylesheet" href="{{ asset('styles/search.css') }}" />
 </head>
@@ -44,7 +46,7 @@
       <div class="right">
         <span id="search-icon" tabindex="0">
           <div>
-            <span>search</span>
+            <span>pretraga</span>
             {!! Form::open(['route' => 'events', 'id' => 'form', 'method' => 'get']) !!}
               <input type="text" name="query" id="" />
             {!! Form::close() !!}
@@ -56,13 +58,23 @@
     </nav>
   </header>
   <script src="{{ asset('js/hamburger.js') }}"></script>
+  <div class="search">
+    <input type="text" class="searchInput" placeholder="pretraga"/>
+    <i class="material-icons" onclick="showMore()">more_horiz</i>
+    <i class="material-icons">send</i>
+  </div>
+    <div class="more">
+
+    </div>
   <div class="cards">
     @if (count($events) > 0)
     @foreach($events as $event)
     @if ($event->show)
     <a href="{{route('preview', $event->id)}}">
       <div class="card">
-        <!-- -->
+<<<<<<< HEAD
+=======
+>>>>>>> 143ec77434932d670874f7b8f776a91aad4f76d3
         <i class="material-icons">{{$event->icon}}</i>
         <div class="body">
           <span class="name">{{ $event->name }}</span>
