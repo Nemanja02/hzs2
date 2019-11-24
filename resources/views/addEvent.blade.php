@@ -78,9 +78,7 @@
 
         {!! Form::label('loc', 'Mesto dešavanja') !!}
         {!! Form::text('loc', null, ['class' => 'form-control', 'placeholder' => 'Narodno pozorište', 'id' => 'place']) !!}
-        <div id="results">
-            
-        </div>
+        <div id="results" ></div>
 
         {!! Form::label('start', 'Vreme početka') !!}
         {!! Form::date('start', null, ['class' => 'form-control']) !!}
