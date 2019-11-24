@@ -76,10 +76,10 @@ class Event extends Model
             $type = $data[$i]->type;
             $data[$i]->icon = Event::getIcon($type);
         }
-        if (isset($query['mindist']) || isset($query['maxdist']))
-            for ($i = 0; $i < count($data); $i++) {
+        // if (isset($query['mindist']) || isset($query['maxdist']))
+        //     for ($i = 0; $i < count($data); $i++) {
                 
-            }
+        //     }
         return $data;
     }
 
