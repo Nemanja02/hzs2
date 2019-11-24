@@ -141,7 +141,7 @@
     </script>
     <script src="{{ asset('js/jquery.datetimepicker.full.min.js') }}"></script>
     <script>
-        jQuery('#end').datetimepicker({theme: 'dark', });
+        jQuery('#end').datetimepicker();
         jQuery('#start').datetimepicker();
     </script>
   </div>

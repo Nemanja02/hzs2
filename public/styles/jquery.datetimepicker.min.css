@@ -310,7 +310,7 @@
     .xdsoft_time_box
     > div
     > div.xdsoft_current {
-    background: var(--color-bg);
+    background: var(--color-card-bg);
     color: var(--color-fg);
     font-weight: 700;
 }
