@@ -59,7 +59,7 @@
   </header>
   <script src="{{ asset('js/hamburger.js') }}"></script>
   <div class="search">
-    <input type="text" class="searchInput" placeholder="pretraga"/>
+    <input type="text" class="searchInput" placeholder="pretraga..."/>
     <i class="material-icons" onclick="showMore()">more_horiz</i>
     <i class="material-icons">send</i>
   </div>
@@ -72,6 +72,7 @@
     @if ($event->show)
     <a href="{{route('preview', $event->id)}}">
       <div class="card">
+        <img src='{{ asset("image/" . $event->images[0]) }}' alt="">
         <i class="material-icons">{{$event->icon}}</i>
         <div class="body">
           <span class="name">{{ $event->name }}</span>
