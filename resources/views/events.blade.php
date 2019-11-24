@@ -59,9 +59,10 @@
   <div class="cards">
     @if (count($events) > 0)
     @foreach($events as $event)
+    @if ($event->show)
     <a href="{{route('preview', $event->id)}}">
       <div class="card">
-        <img src='{{ asset("image/" . $event->images[0]) }}' alt="">
+        <!-- -->
         <i class="material-icons">{{$event->icon}}</i>
         <div class="body">
           <span class="name">{{ $event->name }}</span>
@@ -74,6 +75,7 @@
         <div class="links"><a class="buy" href="{{ $event->ticket }}">Naručite odmah</a></div>
       </div>
     </a>
+    @endif
     @endforeach
     @else
       Nema rezultata

@@ -14,7 +14,7 @@ class Event extends Model
             'Film' => 'movie',
             'Predstava' => 'theaters',
             'Sajam' => 'business',
-            'Izlozba' => 'pallete',
+            'Izlozba' => 'palette',
             'Masterclass' => 'brush',
             'Music Festival' => 'speaker',
             'Zurka' => 'speaker'
@@ -26,7 +26,7 @@ class Event extends Model
         $query = DB::table('events');
         $query->join('cities', 'events.city_id', '=', 'cities.city_id')->select('events.*', 'cities.*');
         if (isset($params['query']))
-            $query->where('events.name', 'LIKE', '%'.$data['query'].'%')->orWhere('events.description', 'LIKE', '%'.$data['query'].'%');
+            $query->where('events.name', 'LIKE', '%'.$params['query'].'%')->orWhere('events.description', 'LIKE', '%'.$params['query'].'%');
         if (isset($params['maxprice']))
             $query->where('events.price', '<=', $params['maxprice']);
             if (isset($params['minprice']))
@@ -65,7 +65,7 @@ class Event extends Model
         return DB::select('SELECT id FROM events WHERE id = id ORDER BY id DESC LIMIT 1')[0]->id;
     }
 
-    public static function wrapEvent($data, $query) {
+    public static function wrapEvent($data, $params) {
         $ip = $_SERVER['REMOTE_ADDR'];
         $ip = "212.200.181.208";
         $location = json_decode(file_get_contents('http://ip-api.com/json/'.$ip));
@@ -74,12 +74,13 @@ class Event extends Model
             $data[$i]->dist = $dist;
             $data[$i]->images = Event::getImages($data[$i]->id);
             $type = $data[$i]->type;
+            $data[$i]->show = true;
             $data[$i]->icon = Event::getIcon($type);
+            if (isset($params['mindist']) && $params['mindist'] > $dist)
+                $data[$i]->show = false;
+                if (isset($params['maxdist']) && $params['maxdist'] < $dist)
+                $data[$i]->show = false;
         }
-        if (isset($query['mindist']) || isset($query['maxdist']))
-            for ($i = 0; $i < count($data); $i++) {
-                
-            }
         return $data;
     }
 
