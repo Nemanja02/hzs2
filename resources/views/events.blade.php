@@ -15,7 +15,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="{{ asset('styles/global.css') }}" />
   <link rel="stylesheet" href="{{ asset('styles/hamburger.css') }}" />
-  <link rel="stylesheet" href="{{ asset('styles/search_more.css') }}" />
 
   <title>{{ config('app.name') }}</title>
   <link rel="stylesheet" href="{{ asset('styles/search.css') }}" />
@@ -48,7 +47,6 @@
           <div>
             <span>pretraga</span>
             {!! Form::open(['route' => 'events', 'id' => 'form', 'method' => 'get']) !!}
-              <input type="text" name="query" id="" />
             {!! Form::close() !!}
           </div>
           <i class="material-icons" id="search">search</i>
@@ -58,14 +56,34 @@
     </nav>
   </header>
   <script src="{{ asset('js/hamburger.js') }}"></script>
+  <script src="{{ asset('js/search_more.js') }}"></script>
   <div class="search">
-    <input type="text" class="searchInput" placeholder="pretraga..."/>
-    <i class="material-icons" onclick="showMore()">more_horiz</i>
+  {!! Form::open(['route' => 'events', 'id' => 'form', 'method' => 'get']) !!}
+    <input type="text" class="searchInput" name="query" placeholder="pretraga..."/>
+    <i class="material-icons" onclick="toggleMore()">more_horiz</i>
     <i class="material-icons">send</i>
+    <input type="number" name="mindist" id="" />
+    <input type="number" name="maxdist" id="" />
+    <input type="number" name="minprice" id="" />
+    <input type="number" name="maxprice" id="" />
+    {!! Form::label('type', 'Tip događaja') !!}
+        {!! 
+            Form::select('type', array(
+                'Koncert' => 'Koncert',
+                'Music Festival' => 'Music Festival',
+                'Predstava' => 'Predstava',
+                'Zurka' => 'Zurka',
+                'Sajam' => 'Sajam',
+                'Izlozba' => 'Izlozba',
+                'Film' => 'Film',
+                'Masterclass' => 'Masterclass'
+            ), ['name' => 'type']); 
+        !!}
+  {{ Form::close() }}
   </div>
-    <div id="more">
-
-    </div>
+  <div id="more" class="is-active">
+    
+  </div>
   <div class="cards">
     @if (count($events) > 0)
     @foreach($events as $event)
@@ -99,5 +117,6 @@
       $('#form').submit();
     })
   </script>
+  
 </body>
 </html>

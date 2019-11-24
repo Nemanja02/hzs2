@@ -29,18 +29,14 @@ class Event extends Model
             $query->where('events.name', 'LIKE', '%'.$params['query'].'%')->orWhere('events.description', 'LIKE', '%'.$params['query'].'%');
         if (isset($params['maxprice']))
             $query->where('events.price', '<=', $params['maxprice']);
-            if (isset($params['minprice']))
+        if (isset($params['minprice']))
             $query->where('events.price', '>=', $params['minprice']);
+        if (isset($params['type']))
+            $query->where('type', '=', $params['type']);
+
 
         $data = $query->get();
         $data = Event::wrapEvent($data, $params);
-        return $data;
-    }
-    
-
-    public static function searchEvents($query) {
-        $data = DB::select("SELECT * FROM events LEFT JOIN (cities) ON (events.city_id = cities.city_id) WHERE name LIKE '%$query%' OR description LIKE '%$query%'");
-        $data = Event::wrapEvent($data);
         return $data;
     }
 
@@ -63,6 +59,10 @@ class Event extends Model
             'ticket' => $req->get('ticket')
         ]);
         return DB::select('SELECT id FROM events WHERE id = id ORDER BY id DESC LIMIT 1')[0]->id;
+    }
+
+    public static function deleteEvent($id) {
+        DB::delete("DELETE FROM events WHERE id = $id");
     }
 
     public static function editEvent($req) {

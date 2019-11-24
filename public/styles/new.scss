@@ -6,6 +6,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  .naslov {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    i.material-icons {
+      font-size: 2rem;
+      cursor: pointer;
+      &:hover {
+        color: $color-fg-focus;
+      }
+    }
+  }
 
   form {
     padding: 2rem;

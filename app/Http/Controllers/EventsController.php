@@ -24,6 +24,11 @@ class EventsController extends Controller {
         return view('events', ['events' => Event::getAllEvents($data)]);
     }
 
+    public function deleteEvent($id) {
+        Event::deleteEvent($id);
+        return redirect()->route('events');
+    }
+
     public function showForm() {
         return view('addEvent');
     }
