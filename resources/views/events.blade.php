@@ -60,31 +60,34 @@
   <script src="{{ asset('js/search_more.js') }}"></script>
   <div class="search">
   {!! Form::open(['route' => 'events', 'id' => 'form', 'method' => 'get']) !!}
-    <input type="text" class="searchInput" name="query" placeholder="pretraga..."/>
-    <i class="material-icons" onclick="toggleMore()">more_horiz</i>
-    <i class="material-icons">send</i>
-    <input type="number" name="mindist" id="" />
-    <input type="number" name="maxdist" id="" />
-    <input type="number" name="minprice" id="" />
-    <input type="number" name="maxprice" id="" />
-    {!! Form::label('type', 'Tip događaja') !!}
-        {!! 
-            Form::select('type', array(
-                'Koncert' => 'Koncert',
-                'Music Festival' => 'Music Festival',
-                'Predstava' => 'Predstava',
-                'Zurka' => 'Zurka',
-                'Sajam' => 'Sajam',
-                'Izlozba' => 'Izlozba',
-                'Film' => 'Film',
-                'Masterclass' => 'Masterclass'
-            ), ['name' => 'type']); 
-        !!}
-  {{ Form::close() }}
+    <div class="less">
+      <input type="text" class="searchInput" name="query" placeholder="pretraga..."/>
+      <i class="material-icons" onclick="toggleMore()">more_horiz</i>
+      <i class="material-icons">send</i>
+    </div>
+    <div id="more">
+    <input type="number" name="maxdist" min="0" id="" placeholder="Najveća udaljenost" />
+    <input type="number" name="minprice" min="0" id="" placeholder="Najmanja cena" />
+    <input type="number" name="maxprice" id="" placeholder="Najveća cena" />
+    <div>
+      {!! Form::label('type', 'Tip događaja') !!}
+      {!! 
+          Form::select('type', array(
+              'Koncert' => 'Koncert',
+              'Music Festival' => 'Music Festival',
+              'Predstava' => 'Predstava',
+              'Zurka' => 'Zurka',
+              'Sajam' => 'Sajam',
+              'Izlozba' => 'Izlozba',
+              'Film' => 'Film',
+              'Masterclass' => 'Masterclass'
+          ), ['name' => 'type']); 
+      !!}
+    </div>
+    {{ Form::close() }}
   </div>
-  <div id="more" class="is-active">
+  </div>
 
-  </div>
   <div class="cards">
     @if (count($events) > 0)
     @foreach($events as $event)

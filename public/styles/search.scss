@@ -4,7 +4,12 @@
 .search {
   padding-top: 10rem;
   display: flex;
+  align-items: center;
   justify-content: center;
+  .less {
+    display: flex;
+    align-items: center;
+  }
 
   input{
     font-size: 1.25rem;
@@ -24,15 +29,33 @@
     border-radius: .5rem;
     cursor: pointer;
   }
-
 }
   
 #more {
-  width: 100%;
   display: none;
-  align-items: center;
+  color: $color-fg;
+  flex-direction: column;
+
   &.is-active {
     display: flex;
+  }
+
+  input, select{
+    font-size: 1.25rem;
+    background: $color-bg;
+    color: $color-fg;
+    border: $color-fg-focus 2px solid;
+    border-radius: .5rem;
+    padding: .75rem;
+    width: 20rem;
+  }
+
+  & > * {
+    margin-top: 1rem;
+  }
+
+  div *{
+    display: block;
   }
 }
 .cards {

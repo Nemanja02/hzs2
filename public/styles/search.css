@@ -3,9 +3,21 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.search .less {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .search input {
@@ -28,17 +40,36 @@
 }
 
 #more {
-  width: 100%;
   display: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  color: var(--color-fg);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #more.is-active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+#more input, #more select {
+  font-size: 1.25rem;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  border: var(--color-fg-focus) 2px solid;
+  border-radius: .5rem;
+  padding: .75rem;
+  width: 20rem;
+}
+
+#more > * {
+  margin-top: 1rem;
+}
+
+#more div * {
+  display: block;
 }
 
 .cards {
