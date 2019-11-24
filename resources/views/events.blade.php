@@ -44,7 +44,7 @@
       <div class="right">
         <span id="search-icon" tabindex="0">
           <div>
-            <span>search</span>
+            <span>pretraga</span>
             {!! Form::open(['route' => 'events', 'id' => 'form', 'method' => 'get']) !!}
               <input type="text" name="query" id="" />
             {!! Form::close() !!}
@@ -56,6 +56,11 @@
     </nav>
   </header>
   <script src="{{ asset('js/hamburger.js') }}"></script>
+  <div class="search">
+    <input type="text" class="searchInput" placeholder="pretraga"/>
+    <i class="material-icons">more_horiz</i>
+    <i class="material-icons">send</i>
+  </div>
   <div class="cards">
     @if (count($events) > 0)
     @foreach($events as $event)

@@ -44,7 +44,7 @@
       <div class="right">
         <span id="search-icon" tabindex="0">
           <div>
-            <span>search</span>
+            <span>pretraga</span>
             {!! Form::open(['route' => 'event.search', 'id' => 'form']) !!}
               <input type="text" name="search" id="" />
             {!! Form::close() !!}

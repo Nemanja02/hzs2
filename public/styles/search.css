@@ -1,3 +1,31 @@
+.search {
+  padding-top: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.search input {
+  font-size: 1.25rem;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  border: var(--color-fg-focus) 2px solid;
+  border-radius: .5rem;
+  padding: .75rem;
+  width: 20rem;
+}
+
+.search i.material-icons {
+  color: var(--color-fg);
+  background-color: var(--color-card-bg);
+  padding: 1rem;
+  margin-left: 1rem;
+  border-radius: .5rem;
+}
+
 .cards {
   max-width: 1200px;
   margin: 0 auto;
@@ -7,7 +35,7 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding-top: 8rem;
+  padding-top: 3rem;
   color: var(--color-fg);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
