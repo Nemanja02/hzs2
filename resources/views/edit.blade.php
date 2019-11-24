@@ -58,7 +58,7 @@
     {!! Form::open(['route' => 'event.edit.apply', 'enctype' => 'multipart/form-data', 'files' => true]) !!}
         <span class="naslov">
           <h2>Izmeni događaj</h2>
-          <i class="material-icons">delete</i>
+          <a href="{{ route('event.delete', $data->id) }}"><i class="material-icons">delete</i></a>
         </span>
         {!! Form::label('name', 'Naziv događaja') !!}
         {!! Form::text('name', $data->name, ['class' => 'form-control', 'placeholder' => 'Predstava Romeo i Julija']) !!}
