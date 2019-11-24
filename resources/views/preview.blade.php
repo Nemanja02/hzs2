@@ -61,7 +61,9 @@
       <img src="{{asset('image/' . $data->images[0])}}" alt="{{$data->name}}">
       <div class="body">
         <span class="name">{{$data->name}}</span>
-        <span class="price">{{($data->price == 0)? "Ulaz besplatan" : "Cena: " . $data->price . " rsd"}}</span> 
+        <span>{{$data->type}}</span>
+        <span>{{($data->price == 0)? "Ulaz besplatan" : "Cena: " . $data->price . " rsd"}}</span> 
+        <span>Mesto dešavanja:  {{ str_replace("%20", " ", $data->city_name) }}, {{ $data->dist }} km </span>
         @if(date('d.m.Y.', $data->starting_time) == date('d.m.Y.', $data->ending_time))
           <span>
             Datum događaja: {{ date('d.m.Y.', $data->starting_time) }}

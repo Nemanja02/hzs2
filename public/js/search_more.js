@@ -1,5 +1,4 @@
 function toggleMore() {
-    console.log("xD");
     var more = document.getElementById("more");
   
     if (more.classList.contains("is-active")) {
