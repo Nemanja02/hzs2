@@ -24,17 +24,17 @@
     border-radius: .5rem;
     cursor: pointer;
   }
+
+}
   
-  .more {
-    height: 300px;
-    width: 300px;
-    background-color: #fff;
-    &.is-active {
-      display: flex;
-    }
+#more {
+  width: 100%;
+  display: none;
+  align-items: center;
+  &.is-active {
+    display: flex;
   }
 }
-
 .cards {
   max-width: 1200px;
   margin: 0 auto;

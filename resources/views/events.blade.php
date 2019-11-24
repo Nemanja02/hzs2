@@ -15,7 +15,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="{{ asset('styles/global.css') }}" />
   <link rel="stylesheet" href="{{ asset('styles/hamburger.css') }}" />
-  <link rel="stylesheet" href="{{ asset('styles/search_more.css') }}" />
 
   <title>{{ config('app.name') }}</title>
   <link rel="stylesheet" href="{{ asset('styles/search.css') }}" />
@@ -58,14 +57,15 @@
     </nav>
   </header>
   <script src="{{ asset('js/hamburger.js') }}"></script>
+  <script src="{{ asset('js/search_more.js') }}"></script>
   <div class="search">
     <input type="text" class="searchInput" placeholder="pretraga..."/>
-    <i class="material-icons" onclick="showMore()">more_horiz</i>
+    <i class="material-icons" onclick="toggleMore()">more_horiz</i>
     <i class="material-icons">send</i>
   </div>
-    <div id="more">
-
-    </div>
+  <div id="more" class="is-active">
+    
+  </div>
   <div class="cards">
     @if (count($events) > 0)
     @foreach($events as $event)

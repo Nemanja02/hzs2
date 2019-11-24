@@ -27,13 +27,15 @@
   cursor: pointer;
 }
 
-.search .more {
-  height: 300px;
-  width: 300px;
-  background-color: #fff;
+#more {
+  width: 100%;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.search .more.is-active {
+#more.is-active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
