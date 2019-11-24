@@ -102,7 +102,7 @@
             {{($event->price == 0)? "Ulaz besplatan" : "Cena: " . $event->price . " rsd"}}
           </span>
         </div>
-        <div class="links"><a class="buy" href="{{ $event->ticket }}">Naručite odmah</a></div>
+        <div class="links"><a class="buy" href="{{ $event->ticket }}">Kupi kartu</a></div>
       </div>
     </a>
     @endif
