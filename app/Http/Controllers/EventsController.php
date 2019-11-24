@@ -15,8 +15,9 @@ class EventsController extends Controller {
         return view('preview', ['data' => Event::getEvent($id)]);
     }
 
-    public function showAll() {
-        return view('events', ['events' => Event::getAllEvents()]);
+    public function showAll(Request $req) {
+        $data = $req->query();
+        return view('events', ['events' => Event::getAllEvents($data)]);
     }
 
     public function showForm() {

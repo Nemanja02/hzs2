@@ -22,46 +22,31 @@ class Event extends Model
         return $icons[$type];
     }
 
-    public static function getAllEvents() {
-        $data = DB::select('SELECT * FROM events LEFT JOIN (cities) ON (events.city_id = cities.city_id)');
-        $ip = $_SERVER['REMOTE_ADDR'];
-        $ip = "212.200.181.208";
-        for ($i = 0; $i < count($data); $i++) {
-            $location = json_decode(file_get_contents('http://ip-api.com/json/'.$ip));
-            $dist = round(Location::distance($data[$i]->lat, $data[$i]->long, $location->lat, $location->lon, "K"));
-            $data[$i]->dist = $dist;
-            $data[$i]->images = Event::getImages($data[$i]->id);
-            $type = $data[$i]->type;
-            $data[$i]->icon = Event::getIcon($type);
-        }
+    public static function getAllEvents($data) {
+        $query = DB::table('events');
+        $query->join('cities', 'events.city_id', '=', 'cities.city_id')->select('events.*', 'cities.*');
+        if (isset($data['query']))
+            $query->where('events.name', 'LIKE', '%'.$data['query'].'%')->orWhere('events.description', 'LIKE', '%'.$data['query'].'%');
+        if (isset($data['maxprice']))
+            $query->where('events.price', '<=', $data['maxprice']);
+            if (isset($data['minprice']))
+            $query->where('events.price', '>=', $data['minprice']);
+
+        $data = $query->get();
+        $data = Event::wrapEvent($data, $query);
         return $data;
     }
+    
 
     public static function searchEvents($query) {
         $data = DB::select("SELECT * FROM events LEFT JOIN (cities) ON (events.city_id = cities.city_id) WHERE name LIKE '%$query%' OR description LIKE '%$query%'");
-        $ip = $_SERVER['REMOTE_ADDR'];
-        $ip = "212.200.181.208";
-        for ($i = 0; $i < count($data); $i++) {
-            $location = json_decode(file_get_contents('http://ip-api.com/json/'.$ip));
-            $dist = round(Location::distance($data[$i]->lat, $data[$i]->long, $location->lat, $location->lon, "K"));
-            $data[$i]->dist = $dist;
-            $data[$i]->images = Event::getImages($data[$i]->id);
-            $type = $data[$i]->type;
-            $data[$i]->icon = Event::getIcon($type);
-        }
+        $data = Event::wrapEvent($data);
         return $data;
     }
 
     public static function getEvent($id) {
-        $data = DB::select("SELECT * FROM events LEFT JOIN (cities) ON (events.city_id = cities.city_id) WHERE id = $id")[0];
-        $ip = $_SERVER['REMOTE_ADDR'];
-        $ip = "212.200.181.208";
-        $location = json_decode(file_get_contents('http://ip-api.com/json/'.$ip));
-        $dist = round(Location::distance($data->lat, $data->long, $location->lat, $location->lon, "K"));
-        $data->dist = $dist;
-        $data->images = Event::getImages($data->id);
-        $type = $data->type;
-        $data->icon = Event::getIcon($type);
+        $data = DB::select("SELECT * FROM events LEFT JOIN (cities) ON (events.city_id = cities.city_id) WHERE id = $id");
+        $data = Event::wrapEvent($data)[0];
 
         return $data;
     }
@@ -78,6 +63,24 @@ class Event extends Model
             'ticket' => $req->get('ticket')
         ]);
         return DB::select('SELECT id FROM events WHERE id = id ORDER BY id DESC LIMIT 1')[0]->id;
+    }
+
+    public static function wrapEvent($data, $query) {
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $ip = "212.200.181.208";
+        $location = json_decode(file_get_contents('http://ip-api.com/json/'.$ip));
+        for ($i = 0; $i < count($data); $i++) {
+            $dist = round(Location::distance($data[$i]->lat, $data[$i]->long, $location->lat, $location->lon, "K"));
+            $data[$i]->dist = $dist;
+            $data[$i]->images = Event::getImages($data[$i]->id);
+            $type = $data[$i]->type;
+            $data[$i]->icon = Event::getIcon($type);
+        }
+        if (isset($query['mindist']) || isset($query['maxdist']))
+            for ($i = 0; $i < count($data); $i++) {
+                
+            }
+        return $data;
     }
 
     public static function getImages($id) {

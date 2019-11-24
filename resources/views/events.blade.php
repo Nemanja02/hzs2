@@ -46,8 +46,8 @@
         <span id="search-icon" tabindex="0">
           <div>
             <span>search</span>
-            {!! Form::open(['route' => 'event.search', 'id' => 'form']) !!}
-              <input type="text" name="search" id="" />
+            {!! Form::open(['route' => 'events', 'id' => 'form', 'method' => 'get']) !!}
+              <input type="text" name="query" id="" />
             {!! Form::close() !!}
           </div>
           <i class="material-icons" id="search">search</i>
@@ -58,6 +58,7 @@
   </header>
   <script src="{{ asset('js/hamburger.js') }}"></script>
   <div class="cards">
+    @if (count($events) > 0)
     @foreach($events as $event)
     <a href="{{route('preview', $event->id)}}">
       <div class="card">
@@ -75,6 +76,9 @@
       </div>
     </a>
     @endforeach
+    @else
+      Nema rezultata
+    @endif
   </div>
   <script src="{{ asset('js/jquery.js') }}"></script>
   <script>
