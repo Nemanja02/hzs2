@@ -5,6 +5,7 @@
   padding-top: 10rem;
   display: flex;
   justify-content: center;
+
   input{
     font-size: 1.25rem;
     background: $color-bg;
@@ -14,12 +15,23 @@
     padding: .75rem;
     width: 20rem;
   }
+
   i.material-icons {
     color: $color-fg;
     background-color: $color-card-bg;
     padding: 1rem;
     margin-left: 1rem;
     border-radius: .5rem;
+    cursor: pointer;
+  }
+  
+  .more {
+    height: 300px;
+    width: 300px;
+    background-color: #fff;
+    &.is-active {
+      display: flex;
+    }
   }
 }
 
@@ -115,3 +127,5 @@ a {
   color: $color-fg;
   text-decoration: none;
 }
+
+// <img src='{{ asset("image/" . $event->images[0]) }}' alt="">

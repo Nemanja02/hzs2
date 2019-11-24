@@ -15,6 +15,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="{{ asset('styles/global.css') }}" />
   <link rel="stylesheet" href="{{ asset('styles/hamburger.css') }}" />
+  <link rel="stylesheet" href="{{ asset('styles/search_more.css') }}" />
+
   <title>{{ config('app.name') }}</title>
   <link rel="stylesheet" href="{{ asset('styles/search.css') }}" />
 </head>
@@ -58,15 +60,17 @@
   <script src="{{ asset('js/hamburger.js') }}"></script>
   <div class="search">
     <input type="text" class="searchInput" placeholder="pretraga"/>
-    <i class="material-icons">more_horiz</i>
+    <i class="material-icons" onclick="showMore()">more_horiz</i>
     <i class="material-icons">send</i>
   </div>
+    <div class="more">
+
+    </div>
   <div class="cards">
     @if (count($events) > 0)
     @foreach($events as $event)
     <a href="{{route('preview', $event->id)}}">
       <div class="card">
-        <img src='{{ asset("image/" . $event->images[0]) }}' alt="">
         <i class="material-icons">{{$event->icon}}</i>
         <div class="body">
           <span class="name">{{ $event->name }}</span>

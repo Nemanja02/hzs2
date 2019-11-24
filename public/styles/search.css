@@ -24,6 +24,19 @@
   padding: 1rem;
   margin-left: 1rem;
   border-radius: .5rem;
+  cursor: pointer;
+}
+
+.search .more {
+  height: 300px;
+  width: 300px;
+  background-color: #fff;
+}
+
+.search .more.is-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .cards {
