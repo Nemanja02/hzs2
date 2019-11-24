@@ -77,8 +77,10 @@
         !!}
 
         {!! Form::label('loc', 'Mesto dešavanja') !!}
-        {!! Form::text('loc', null, ['class' => 'form-control', 'placeholder' => 'Narodno pozorište']) !!}
-        <div id="results"></div>
+        {!! Form::text('loc', null, ['class' => 'form-control', 'placeholder' => 'Narodno pozorište', 'id' => 'place']) !!}
+        <div id="results">
+            
+        </div>
 
         {!! Form::label('start', 'Vreme početka') !!}
         {!! Form::date('start', null, ['class' => 'form-control']) !!}
@@ -102,16 +104,34 @@
     {!! Form::close() !!}
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script>
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://us1.locationiq.com/v1/search.php?key=aaa9efdcf97bd5&q=Empire%20State%20Building&format=json",
-            "method": "GET"
-        }
-
-        $.ajax(settings).done(function (response) {
-            
+        $('body').on('click', '#result', function(){
+            $("#place").val($(this).text());
+            $("#results").empty();
         });
+
+        $("#place").keyup(function(){
+            let val = $("#place").val();
+            if (val.length > 3) {
+                val = encodeURIComponent(val.trim());
+                var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://us1.locationiq.com/v1/search.php?key=aaa9efdcf97bd5&q=" + val + "&format=json",
+                    "method": "GET"
+                }
+                $.ajax(settings).done(function (response) {
+                    $("#results").empty();
+                    let limit = (response.length < 5) ? response.length : 5;
+                    for (let i = 0; i < limit; i++) {
+                        $("#results").append('<span id="result">' + response[i].display_name + '</span><br>')
+
+                    }
+                });
+            } else {
+                $("#results").empty();
+            }
+        });
+
     </script>
   </div>
 </body>
