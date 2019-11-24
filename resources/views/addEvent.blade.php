@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="{{ asset('styles/navigation.css') }}" />
   <header>
     <div class="mobile-nav">
-      <span>mape.</span>
+      <a href="{{route('index')}}">mape.</a>
       <div
         onclick="toggleBurger()"
         id="burger"
@@ -40,7 +40,6 @@
         <li><a href="{{route('index')}}">mape.</a></li>
         <li><a href="{{route('events')}}">događaji</a></li>
         <li><a href="{{route('event.new')}}">dodaj</a></li>
-        <li><a href="#">123</a></li>
       </ul>
       <div class="right">
         <span id="search-icon"  tabindex="0">

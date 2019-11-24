@@ -2,17 +2,16 @@
 @import "mixins";
 
 .event {
-  position: fixed;
   width: 100%;
-  height: calc(100% - 6rem);
-  top: 6rem;
   padding: 3rem;
   display: flex;
   flex-direction: column;
   color: $color-fg;
 
   .main {
+    padding-top: 6em;
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
 
     i.material-icons {
@@ -30,8 +29,9 @@
         font-size: 4rem;
       }
 
-      span {
+      span:not(.name) {
         font-size: 2rem;
+        text-indent: 2rem;
       }
     }
     img {
@@ -45,9 +45,46 @@
   }
 
   .about {
-    margin-top: 2em;
+    margin-top: 1em;
     font-size: 1.5rem;
     line-height: 1.5;
-    text-indent: 5rem;
+    text-indent: 3rem;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .event {
+    .main { 
+      img {
+        width:400px;
+        height: 300px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:1000px) {
+  .event {
+    .main { 
+      flex-direction: column;
+      justify-content: stretch;
+      .body {
+        padding:1rem;
+
+        span {
+          font-size: 1.5rem;
+        }
+      }
+      img {
+        width:100%;
+      }
+    }
+    i {
+      display: none;
+    }
+    .about {
+      text-indent: 0;
+      margin-top: .5rem;
+    }
   }
 }
