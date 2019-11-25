@@ -97,6 +97,7 @@
 
 #starred h1 {
   padding: 2rem;
+  color: var(--color-fg);
   text-align: center;
 }
 
