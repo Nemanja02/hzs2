@@ -46,9 +46,11 @@
         <span id="search-icon"  tabindex="0">
           <div>
             <span>search</span>
-            <input type="text" name="search" id="search" />
+            {!! Form::open(['route' => 'events', 'id' => 'form', 'method' => 'get']) !!}
+            <input type="text" name="query" id="search" />
+            {{Form::close()}}
           </div>
-          <i class="material-icons">search</i>
+          <i class="material-icons" id="oof">search</i>
         </span>
         <i class="material-icons" onclick="changeTheme()">brightness_6</i>
       </div>
@@ -86,6 +88,10 @@
 
         <input type="hidden" id="lat" name="lat">
         <input type="hidden" id="lon" name="lon">
+        <div class="starred">
+          <label for="">Popularni događaj: </label>
+          <input type="checkbox" name="starred">
+        </div>
 
         {!! Form::label('start', 'Vreme početka') !!}
         {!! Form::text('start', null, ['class' => 'form-control', 'id' => 'start', 'value' => '2014/03/15 05:06']) !!}
@@ -144,6 +150,11 @@
         jQuery('#end').datetimepicker();
         jQuery('#start').datetimepicker();
     </script>
+  <script>
+    $("#oof").click(function(){
+      $('#form').submit();
+    })
+  </script>
   </div>
 </body>
 </html>

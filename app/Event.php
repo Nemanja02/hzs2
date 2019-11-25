@@ -40,6 +40,14 @@ class Event extends Model
         return $data;
     }
 
+    public static function getStarredEvents() {
+        $query = DB::table('events');
+        $query->join('cities', 'events.city_id', '=', 'cities.city_id')->select('events.*', 'cities.*')->where('events.starred', '=', 'on');
+        $data = $query->get();
+        $data = Event::wrapEvent($data, null);
+        return $data;
+    }
+
     public static function getEvent($id) {
         $data = DB::select("SELECT * FROM events LEFT JOIN (cities) ON (events.city_id = cities.city_id) WHERE id = $id");
         $data = Event::wrapEvent($data, null)[0];
@@ -56,7 +64,8 @@ class Event extends Model
             'starting_time' => strtotime($req->get('start')),
             'ending_time' => strtotime($req->get('end')),
             'city_id' => $city_id,
-            'ticket' => $req->get('ticket')
+            'ticket' => $req->get('ticket'),
+            'starred' => $req->get('starred')
         ]);
         return DB::select('SELECT id FROM events WHERE id = id ORDER BY id DESC LIMIT 1')[0]->id;
     }

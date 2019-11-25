@@ -11,6 +11,10 @@ use App\Http\Controllers\Controller;
 
 class EventsController extends Controller {
 
+    public function index() {
+        return view('welcome', ['data' => Event::getStarredEvents()]);
+    }
+
     public function showEvent($id) {
         return view('preview', ['data' => Event::getEvent($id)]);
     }

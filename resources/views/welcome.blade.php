@@ -48,9 +48,11 @@
         <span id="search-icon" tabindex="0">
           <div>
             <span>pretraga</span>
-            <input type="text" name="search" id="search" />
+            {!! Form::open(['route' => 'events', 'id' => 'form', 'method' => 'get']) !!}
+            <input type="text" name="query" id="search" />
+            {{Form::close()}}
           </div>
-          <i class="material-icons">search</i>
+          <i class="material-icons" id="oof">search</i>
         </span>
         <i class="material-icons" onclick="changeTheme()">brightness_6</i>
       </div>
@@ -72,136 +74,31 @@
   </div> -->
   <div id="starred">
     <h1>Popularni događaji</h1>
+    @foreach ($data as $event)
     <div class="card">
-      <img src="https://www.fillmurray.com/640/360" alt="ne">
+      <img src='{{ asset("image/" . $event->images[0]) }}' alt="ne">
       <span class="about">
-        <span class="name">mrtvi mi5</span>
+        <span class="name">{{$event->name}}</span>
         <br />
-        Beograd, levo 
+        {{$event->city_name}}, {{$event->dist}} km
         <br />
-        Ulaz besplatan
+        {{($event->price == 0)? "Ulaz besplatan" : "Cena: " . $event->price . " rsd"}}
 
         <div class="links">
-          <a class="buy" href="#" target="_blank">Kupi kartu</a>
+          <a class="buy" href="{{$event->ticket}}" target="_blank">{{($event->price == 0)? "Prijavi se" : "Kupi kartu"}}</a>
         </div>
       </span>
     </div>
-    <div class="card">
-      <img src="https://www.fillmurray.com/640/360" alt="ne">
-      <span class="about">
-        <span class="name">mrtvi mi5</span>
-        <br />
-        Beograd, levo 
-        <br />
-        Ulaz besplatan
-
-        <div class="links">
-          <a class="buy" href="#" target="_blank">Kupi kartu</a>
-        </div>
-      </span>
-    </div>
-    <div class="card">
-      <img src="https://www.fillmurray.com/640/360" alt="ne">
-      <span class="about">
-        <span class="name">mrtvi mi5</span>
-        <br />
-        Beograd, levo 
-        <br />
-        Ulaz besplatan
-
-        <div class="links">
-          <a class="buy" href="#" target="_blank">Kupi kartu</a>
-        </div>
-      </span>
-    </div>
-    <div class="card">
-      <img src="https://www.fillmurray.com/640/360" alt="ne">
-      <span class="about">
-        <span class="name">mrtvi mi5</span>
-        <br />
-        Beograd, levo 
-        <br />
-        Ulaz besplatan
-
-        <div class="links">
-          <a class="buy" href="#" target="_blank">Kupi kartu</a>
-        </div>
-      </span>
-    </div>
-    <div class="card">
-      <img src="https://www.fillmurray.com/640/360" alt="ne">
-      <span class="about">
-        <span class="name">mrtvi mi5</span>
-        <br />
-        Beograd, levo 
-        <br />
-        Ulaz besplatan
-
-        <div class="links">
-          <a class="buy" href="#" target="_blank">Kupi kartu</a>
-        </div>
-      </span>
-    </div>
-    <div class="card">
-      <img src="https://www.fillmurray.com/640/360" alt="ne">
-      <span class="about">
-        <span class="name">mrtvi mi5</span>
-        <br />
-        Beograd, levo 
-        <br />
-        Ulaz besplatan
-
-        <div class="links">
-          <a class="buy" href="#" target="_blank">Kupi kartu</a>
-        </div>
-      </span>
-    </div>
-    <div class="card">
-      <img src="https://www.fillmurray.com/640/360" alt="ne">
-      <span class="about">
-        <span class="name">mrtvi mi5</span>
-        <br />
-        Beograd, levo 
-        <br />
-        Ulaz besplatan
-
-        <div class="links">
-          <a class="buy" href="#" target="_blank">Kupi kartu</a>
-        </div>
-      </span>
-    </div>
-    <div class="card">
-      <img src="https://www.fillmurray.com/640/360" alt="ne">
-      <span class="about">
-        <span class="name">mrtvi mi5</span>
-        <br />
-        Beograd, levo 
-        <br />
-        Ulaz besplatan
-
-        <div class="links">
-          <a class="buy" href="#" target="_blank">Kupi kartu</a>
-        </div>
-      </span>
-    </div>
-    <div class="card">
-      <img src="https://www.fillmurray.com/640/360" alt="ne">
-      <span class="about">
-        <span class="name">mrtvi mi5</span>
-        <br />
-        Beograd, levo 
-        <br />
-        Ulaz besplatan
-
-        <div class="links">
-          <a class="buy" href="#" target="_blank">Kupi kartu</a>
-        </div>
-      </span>
-    </div>
+    @endforeach
   </div>
   
   <i id="up" class="material-icons">keyboard_arrow_up</i>
   <script src="{{asset('js/scroll.js')}}"></script>
+  <script>
+    $("#oof").click(function(){
+      $('form').submit();
+    })
+  </script>
 </body>
 
 </html>
