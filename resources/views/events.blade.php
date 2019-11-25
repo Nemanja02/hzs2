@@ -44,8 +44,8 @@
         <li><a href="{{route('event.new')}}">dodaj</a></li>
       </ul>
       <div class="right">
-        <span id="search-icon" tabindex="0">
-          <i class="material-icons" id="search">s</i>
+        <span style="pointer-events: none" id="search-icon" tabindex="0">
+          <i style="pointer-events: none" class="material-icons" id="search">s</i>
         </span>
         <i class="material-icons" onclick="changeTheme()">brightness_6</i>
       </div>

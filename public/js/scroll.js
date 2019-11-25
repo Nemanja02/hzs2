@@ -1,6 +1,6 @@
 $('#down').click(()=> {
   $('html, body').animate({
-    scrollTop: $("#lol").offset().top
+    scrollTop: $("#starred").offset().top
   }, 500);
 })
 

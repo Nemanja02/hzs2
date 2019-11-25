@@ -63,3 +63,40 @@
     pointer-events: none;
   }
 }
+
+#starred {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .card{
+    width: 80%;
+    height: 500px;
+
+    margin-top: 3em;
+    background-color: $color-card-bg;
+    display:flex;
+    color: $color-fg;
+    border-radius: .5rem;
+    flex-direction: row-reverse;
+    span {
+      height: 300px;
+      padding: 1rem 2rem;
+      font-size: 2rem;
+      .name {
+        padding: 0rem;
+        font-size: 4rem;
+      }
+    }
+
+    &:nth-child(2n) {
+      align-self: flex-end;
+      justify-content: flex-start;
+      flex-direction: row;
+    }
+    img {
+      border-radius: .5rem;
+      width:350px;
+      object-fit: cover;
+    }
+  }
+}

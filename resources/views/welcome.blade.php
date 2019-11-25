@@ -70,8 +70,57 @@
     <i class="material-icons">speaker</i>
     <i class="material-icons">local_play</i>
   </div> -->
-  <div id="lol" class="lol">
-
+  <div id="starred" class="lol">
+    <div class="card">
+      <img src="https://www.fillmurray.com/640/360" alt="ne">
+      <span class="about">
+        <span class="name">mrtvi mi5</span>
+        <br />
+        Beograd, levo 
+        <br />
+        Ulaz besplatan
+      </span>
+    </div>
+    <div class="card">
+      <img src="https://www.fillmurray.com/640/360" alt="ne">
+      <span class="about">
+        <span class="name">mrtvi mi5</span>
+        <br />
+        Beograd, levo 
+        <br />
+        Ulaz besplatan
+      </span>
+    </div>
+    <div class="card">
+      <img src="https://www.fillmurray.com/640/360" alt="ne">
+      <span class="about">
+        <span class="name">mrtvi mi5</span>
+        <br />
+        Beograd, levo 
+        <br />
+        Ulaz besplatan
+      </span>
+    </div>
+    <div class="card">
+      <img src="https://www.fillmurray.com/640/360" alt="ne">
+      <span class="about">
+        <span class="name">mrtvi mi5</span>
+        <br />
+        Beograd, levo 
+        <br />
+        Ulaz besplatan
+      </span>
+    </div>
+    <div class="card">
+      <img src="https://www.fillmurray.com/640/360" alt="ne">
+      <span class="about">
+        <span class="name">mrtvi mi5</span>
+        <br />
+        Beograd, levo 
+        <br />
+        Ulaz besplatan
+      </span>
+    </div>
   </div>
   
   <i id="up" class="material-icons">keyboard_arrow_up</i>
