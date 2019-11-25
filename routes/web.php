@@ -1,8 +1,6 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('index');
+Route::get('/', 'EventsController@index')->name('index');
 
 Route::get('/about', function () {
     return view('about');

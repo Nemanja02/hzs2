@@ -46,9 +46,11 @@
         <span id="search-icon" tabindex="0">
           <div>
             <span>pretraga</span>
-            <input type="text" name="search" id="search" />
+            {!! Form::open(['route' => 'events', 'id' => 'form', 'method' => 'get']) !!}
+            <input type="text" name="query" id="search" />
+            {{Form::close()}}
           </div>
-          <i class="material-icons">search</i>
+          <i class="material-icons" id="oof">search</i>
         </span>
         <i class="material-icons" onclick="changeTheme()">brightness_6</i>
       </div>
@@ -75,6 +77,12 @@
   <div class="lol">
 
   </div>
+  <script src="{{asset('js/jquery.js')}}"></script>
+  <script>
+    $("#oof").click(function(){
+      $('form').submit();
+    })
+  </script>
 </body>
 
 </html>
