@@ -63,7 +63,7 @@
         <h2>Napravite novi događaj</h2>
 
         {!! Form::label('name', 'Naziv događaja') !!}
-        {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Predstava Romeo i Julija', 'id' => 'eventname']) !!}
+        {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Predstava Romeo i Julija', 'id' => 'eventname', 'required' => 'true']) !!}
 
         {!! Form::label('type', 'Tip događaja') !!}
         {!! 
@@ -84,7 +84,7 @@
         <div id="results" ></div>
 
         {!! Form::label('loc_name', 'Ime mesta koje ce se prikazivati') !!}
-        {!! Form::text('loc_name', null, ['class' => 'form-control', 'placeholder' => 'Narodno pozorište', 'id' => 'placename']) !!}
+        {!! Form::text('loc_name', null, ['class' => 'form-control', 'placeholder' => 'Narodno pozorište', 'id' => 'placename', 'required' => 'true']) !!}
 
         <input type="hidden" id="lat" name="lat">
         <input type="hidden" id="lon" name="lon">
@@ -105,7 +105,7 @@
         {!! Form::number('price', 0, ['class' => 'form-control', 'step' => '10', 'min' => '0', 'id' => 'price']) !!}
 
         {!! Form::label('price', 'Izaberite sliku događaja') !!}
-        <input type="file" name="images[]" id="images" multiple>
+        <input type="file" name="images[]" id="images" multiple required>
 
         {!! Form::textarea('desc', null, ['class' => 'form-control','id' => 'desc', 'placeholder' => 'Prelepa predstava Romeo i Julija odigrana na narodnom pozorištu']) !!}
 
