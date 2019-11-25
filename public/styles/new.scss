@@ -12,6 +12,7 @@
     align-items: center;
     i.material-icons {
       font-size: 2rem;
+      color: $color-fg;
       cursor: pointer;
       &:hover {
         color: $color-fg-focus;

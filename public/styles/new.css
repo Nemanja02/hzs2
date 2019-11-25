@@ -27,6 +27,7 @@
 
 .form .naslov i.material-icons {
   font-size: 2rem;
+  color: var(--color-fg);
   cursor: pointer;
 }
 
