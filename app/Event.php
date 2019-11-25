@@ -82,7 +82,8 @@ class Event extends Model
             'description' => $req->get('desc'),
             'starting_time' => strtotime($req->get('start')),
             'ending_time' => strtotime($req->get('end')),
-            'ticket' => $req->get('ticket')
+            'ticket' => $req->get('ticket'),
+            'starred' => $req->get('starred')
         ]);
         return DB::select('SELECT id FROM events WHERE id = id ORDER BY id DESC LIMIT 1')[0]->id;
     }
