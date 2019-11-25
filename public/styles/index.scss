@@ -1,5 +1,12 @@
 @import "colors";
-
+@keyframes up-down{
+  from {
+    transform: translateX(50%) translateY(0);
+  }
+  to {
+    transform: translateX(50%) translateY(10px);
+  }
+}
 .banner {
   padding-top: 6rem;
   width: 100%;
@@ -17,10 +24,41 @@
   h1 {
     margin-bottom: 1rem;
   }
+
+  i.material-icons {
+    cursor: pointer;
+    color: white;
+    font-size: 5em;
+    position: absolute;
+    bottom: 3rem;
+    right:50%;
+    transform: translateX(50%);
+    animation: up-down 1s alternate infinite;
+    text-shadow: 5px 5px 5px $color-shadow;
+  }
 }
 
 .lol {
   width: 100%;
   height: calc(100vh - 5rem);
   background-color: $color-bg;
+}
+
+#up {
+  cursor: pointer;
+  position: fixed;
+  color: $color-fg;
+  background-color: $color-card-bg;
+  padding: 1rem;
+  border-radius: 5000px;
+  font-size: 3em;
+  bottom: 3rem;
+  right: 3rem;
+  box-shadow: 5px 5px 5px $color-shadow;
+  opacity: 1;
+  transition: all .2s;
+  
+  &.is-hidden {
+    opacity: 0;
+  }
 }

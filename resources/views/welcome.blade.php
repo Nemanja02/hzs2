@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="{{ asset('styles/hamburger.css') }}" />
   <title>{{ config('app.name') }}</title>
   <link rel="stylesheet" href="{{ asset('styles/index.css') }}" />
+  <script src="{{asset('js/jquery.js')}}"></script>
 </head>
 
 <body onload="themeLoad()">
@@ -62,15 +63,19 @@
       <h1>Najbolja zabava u gradu</h1>
       <h2>Sve na jednom mestu</h2>
     </div>
+    <i id="down" class="material-icons">keyboard_arrow_down</i>
   </div>
   <!-- <div class="float">
     <i class="material-icons">nature</i>
     <i class="material-icons">speaker</i>
     <i class="material-icons">local_play</i>
   </div> -->
-  <div class="lol">
+  <div id="lol" class="lol">
 
   </div>
+  
+  <i id="up" class="material-icons">keyboard_arrow_up</i>
+  <script src="{{asset('js/scroll.js')}}"></script>
 </body>
 
 </html>

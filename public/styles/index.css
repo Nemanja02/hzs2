@@ -1,3 +1,25 @@
+@-webkit-keyframes up-down {
+  from {
+    -webkit-transform: translateX(50%) translateY(0);
+            transform: translateX(50%) translateY(0);
+  }
+  to {
+    -webkit-transform: translateX(50%) translateY(10px);
+            transform: translateX(50%) translateY(10px);
+  }
+}
+
+@keyframes up-down {
+  from {
+    -webkit-transform: translateX(50%) translateY(0);
+            transform: translateX(50%) translateY(0);
+  }
+  to {
+    -webkit-transform: translateX(50%) translateY(10px);
+            transform: translateX(50%) translateY(10px);
+  }
+}
+
 .banner {
   padding-top: 6rem;
   width: 100%;
@@ -19,9 +41,44 @@
   margin-bottom: 1rem;
 }
 
+.banner i.material-icons {
+  cursor: pointer;
+  color: white;
+  font-size: 5em;
+  position: absolute;
+  bottom: 3rem;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  -webkit-animation: up-down 1s alternate infinite;
+          animation: up-down 1s alternate infinite;
+  text-shadow: 5px 5px 5px var(--color-shadow);
+}
+
 .lol {
   width: 100%;
   height: calc(100vh - 5rem);
   background-color: var(--color-bg);
+}
+
+#up {
+  cursor: pointer;
+  position: fixed;
+  color: var(--color-fg);
+  background-color: var(--color-card-bg);
+  padding: 1rem;
+  border-radius: 5000px;
+  font-size: 3em;
+  bottom: 3rem;
+  right: 3rem;
+  -webkit-box-shadow: 5px 5px 5px var(--color-shadow);
+          box-shadow: 5px 5px 5px var(--color-shadow);
+  opacity: 1;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+#up.is-hidden {
+  opacity: 0;
 }
 /*# sourceMappingURL=index.css.map */
