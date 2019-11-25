@@ -29,8 +29,7 @@ $(document).ready(() => {
       div.style.right = "0";
       div.style.background = "black";
       div.style.color = "white";
-      div.style.zIndex = "3000"
-      div.innerHTML = "Hello";
+      div.style.zIndex = "3000";
       div.style.backgroundImage = 'url(' + document.body.dataset.url + '/man-of-culture.gif)';  
       div.onclick= () => {document.body.removeChild(div)}
       document.addEventListener('keydown', function(event) {
