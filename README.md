@@ -1,7 +1,29 @@
-Za ovaj projekat smo koristili php framework Laravel i jquery.
-Aplikacija ima 7 stranica
-Javni API koji smo koristili:
- - https://locationiq.com/ (Dobijanje koordinata na osnovu imena lokacije)
- - https://ip-api.com/ (Dobijanje koordinata na osnovu korisnikove ip adrese)
-Namena AJAX-a u projektu: Pri kreiranju novog dogadjaja kada se upise 4 ili vise karaktera u polje za lokaciju, prikazuje 5 najboljih sugestija.
+## mape.
+# Pomoć za pronalaženje najboljeg događaja u vašoj blizini
 
+Korišćene  tehnologije:
+- APIs:
+    - Za dobijanje koordinata lokacije na osnovu imena: https://locationiq.com/ 
+    - Za dobijanje koordinata na osnovu korisničke ip adrese: https://ip-api.com/
+
+- Jezici i framework:
+    - HTML
+    - SCSS https://sass-lang.com/
+    - JavaScript
+    - PHP https://www.php.net/
+    - laravel https://laravel.com/ 
+    - ajax
+
+Web aplikacija koja omogućava pronalaženje najbitnijih događaja u vašoj blizini, Uz    pomoć različitih parametra moguće je nači najbolje mesto za izlazak u grad, posetu lepe iyložbe ili koncert vašeg omiljenog benda. 
+
+Na početnoj strani nalaze se događaji koji najbolje odgovaraju širim masama i koji su najaktuelniji u tom trenutku ali u zavisnosti od interesovanja možete pronaći i događaje koje spadaju u ove kategorije:
+- Koncert
+- Film
+- Predstava
+- Sajam
+- Izložba
+- Javni čas
+- Muzički festival
+- Žurka
+
+Korišićenjem asinhronog JavaScript-a (ajax) pri unosu lokacije događaja moguće je iyabrati tačno mesto dešavanja.

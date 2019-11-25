@@ -92,6 +92,7 @@
 
     <span class="about">{{$data->description}}</span>
   </div>
+  
   <script src="{{asset('js/jquery.js')}}"></script>
   <script>
     $("#oof").click(function(){
