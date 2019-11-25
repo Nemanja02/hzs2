@@ -56,6 +56,7 @@ class Event extends Model
     }
 
     public static function createEvent($req, $city_id) {
+        $starred = ($req->get('starred') == null) ? "off": "on";
         DB::table('events')->insert([
             'name' => $req->get('name'),
             'type' => $req->get('type'),
@@ -65,7 +66,7 @@ class Event extends Model
             'ending_time' => strtotime($req->get('end')),
             'city_id' => $city_id,
             'ticket' => $req->get('ticket'),
-            'starred' => $req->get('starred')
+            'starred' => $starred
         ]);
         return DB::select('SELECT id FROM events WHERE id = id ORDER BY id DESC LIMIT 1')[0]->id;
     }
@@ -75,6 +76,7 @@ class Event extends Model
     }
 
     public static function editEvent($req) {
+        $starred = ($req->get('starred') == null) ? "off": "on";
         $query = DB::table('events')->where('id', '=', $req->get('id'))->update([
             'name' => $req->get('name'),
             'type' => $req->get('type'),
@@ -83,7 +85,7 @@ class Event extends Model
             'starting_time' => strtotime($req->get('start')),
             'ending_time' => strtotime($req->get('end')),
             'ticket' => $req->get('ticket'),
-            'starred' => $req->get('starred')
+            'starred' => $starred
         ]);
         return DB::select('SELECT id FROM events WHERE id = id ORDER BY id DESC LIMIT 1')[0]->id;
     }
