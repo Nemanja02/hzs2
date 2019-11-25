@@ -26,4 +26,6 @@ Na početnoj strani nalaze se događaji koji najbolje odgovaraju širim masama i
 - Muzički festival
 - Žurka
 
-Korišićenjem asinhronog JavaScript-a (ajax) pri unosu lokacije događaja moguće je iyabrati tačno mesto dešavanja.
+Korišićenjem asinhronog JavaScript-a (ajax) pri unosu lokacije događaja moguće je izabrati tačno mesto dešavanja.
+
+Korišćenjem CSS promenjivih i malo JavaScript-a dodali smo opciju za svetlu ili temnu temu. Izabrana opcija ostaje upamćena i posle napuštanja sajta
