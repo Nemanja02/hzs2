@@ -67,7 +67,7 @@ class EventsController extends Controller {
             $city_id = Location::addLocation($req->get('loc_name'), $req->get('lat'), $req->get('lon'));
         $id = Event::editEvent($req);
 
-        return redirect()->route('event.new');
+        return redirect()->route('events');
     }
 }
 
