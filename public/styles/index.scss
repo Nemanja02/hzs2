@@ -81,7 +81,7 @@
     background-color: $color-card-bg;
     display:flex;
     color: $color-fg;
-    border-radius: .5rem;
+    border-radius: 0 .5rem .5rem 0;
     flex-direction: row-reverse;
     box-shadow: 10px 10px 10px $color-shadow;
     transform-origin: left center;
@@ -94,6 +94,7 @@
       align-self: flex-end;
       justify-content: flex-start;
       flex-direction: row;
+      border-radius: .5rem 0 0 .5rem;
     }
 
     .links {
@@ -162,15 +163,17 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   #starred {
-    padding: 2rem;
+    padding: 3rem;
     .card {
-      margin-top: 2rem;
+      margin-top: 3rem;
       width:100%;
       flex-direction: column;
+      transform-origin: center;
       &:nth-child(2n) {
         flex-direction: column;
+        transform-origin: center;
       }
       img {
         width:100%

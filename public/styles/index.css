@@ -110,7 +110,7 @@
   display: -ms-flexbox;
   display: flex;
   color: var(--color-fg);
-  border-radius: .5rem;
+  border-radius: 0 .5rem .5rem 0;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
@@ -140,6 +140,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  border-radius: .5rem 0 0 .5rem;
 }
 
 #starred .card .links {
@@ -209,23 +210,27 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   #starred {
-    padding: 2rem;
+    padding: 3rem;
   }
   #starred .card {
-    margin-top: 2rem;
+    margin-top: 3rem;
     width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-transform-origin: center;
+            transform-origin: center;
   }
   #starred .card:nth-child(2n) {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-transform-origin: center;
+            transform-origin: center;
   }
   #starred .card img {
     width: 100%;

@@ -107,7 +107,6 @@
         color: $color-bg;
         font-size: 1.5rem;
         font-family:'Material Icons';
-        @extend .material-icons;
         font-weight: bolder;
         font-style: normal;
         line-height: 1;
@@ -117,7 +116,6 @@
         white-space: nowrap;
         word-wrap: normal;
         direction: ltr;
-        -webkit-font-feature-settings: 'liga';
         -webkit-font-smoothing: antialiased;
         content: '\e5ca';
       }
