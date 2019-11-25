@@ -97,6 +97,7 @@
 #starred .card {
   width: 80%;
   height: 500px;
+  position: relative;
   margin-top: 3em;
   background-color: var(--color-card-bg);
   display: -webkit-box;
@@ -108,17 +109,8 @@
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
-}
-
-#starred .card span {
-  height: 300px;
-  padding: 1rem 2rem;
-  font-size: 2rem;
-}
-
-#starred .card span .name {
-  padding: 0rem;
-  font-size: 4rem;
+  -webkit-box-shadow: 10px 10px 10px var(--color-shadow);
+          box-shadow: 10px 10px 10px var(--color-shadow);
 }
 
 #starred .card:nth-child(2n) {
@@ -133,10 +125,100 @@
           flex-direction: row;
 }
 
+#starred .card .links {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-bottom: 1rem;
+  padding-right: 3rem;
+  position: absolute;
+  bottom: 0;
+}
+
+#starred .card .links .buy {
+  border: var(--color-fg) 1px solid;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+#starred .card .links a {
+  color: var(--color-fg);
+  text-decoration: none;
+}
+
+#starred .card .links a:hover {
+  border-color: var(--color-fg-focus);
+  color: var(--color-fg-focus);
+}
+
+#starred .card .links a:focus {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+#starred .card span {
+  position: relative;
+  height: 300px;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+}
+
+#starred .card span .name {
+  padding: 0rem;
+  font-size: 4rem;
+}
+
 #starred .card img {
   border-radius: .5rem;
   width: 350px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+  #starred .card img {
+    width: 250px;
+  }
+  #starred .card span {
+    height: 200px;
+    font-size: 1.5rem;
+  }
+  #starred .card span .name {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 700px) {
+  #starred {
+    padding: 2rem;
+  }
+  #starred .card {
+    margin-top: 2rem;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #starred .card:nth-child(2n) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #starred .card img {
+    width: 100%;
+  }
+  #starred .card span {
+    height: 200px;
+    font-size: 1.5rem;
+  }
+  #starred .card span .name {
+    font-size: 3rem;
+  }
 }
 /*# sourceMappingURL=index.css.map */

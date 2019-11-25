@@ -71,14 +71,50 @@
   .card{
     width: 80%;
     height: 500px;
-
+    position: relative;
     margin-top: 3em;
     background-color: $color-card-bg;
     display:flex;
     color: $color-fg;
     border-radius: .5rem;
     flex-direction: row-reverse;
+    box-shadow: 10px 10px 10px $color-shadow;
+    &:nth-child(2n) {
+      align-self: flex-end;
+      justify-content: flex-start;
+      flex-direction: row;
+    }
+
+    .links {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding-bottom: 1rem;
+      padding-right: 3rem;
+      position: absolute;
+      bottom: 0;
+      .buy {
+        border: $color-fg 1px solid;
+        border-radius: 0.25rem;
+        padding: 0.5rem;
+      }
+      a {
+        color: $color-fg;
+        text-decoration: none;
+        &:hover {
+          border-color: $color-fg-focus;
+          color: $color-fg-focus;
+        }
+
+        &:focus {
+          border-color: $color-primary;
+          color: $color-primary;
+        }
+      }
+    }
+
     span {
+      position: relative;
       height: 300px;
       padding: 1rem 2rem;
       font-size: 2rem;
@@ -88,15 +124,54 @@
       }
     }
 
-    &:nth-child(2n) {
-      align-self: flex-end;
-      justify-content: flex-start;
-      flex-direction: row;
-    }
     img {
       border-radius: .5rem;
       width:350px;
       object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  #starred {
+    .card {
+      
+      img {
+        width:250px;
+      }
+      span {
+        height: 200px;
+        font-size: 1.5rem;
+
+        .name {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  #starred {
+    padding: 2rem;
+    .card {
+      margin-top: 2rem;
+      width:100%;
+      flex-direction: column;
+      &:nth-child(2n) {
+        flex-direction: column;
+      }
+      img {
+        width:100%
+      }
+      span {
+        height: 200px;
+        font-size: 1.5rem;
+
+        .name {
+          font-size: 3rem;
+        }
+      }
     }
   }
 }

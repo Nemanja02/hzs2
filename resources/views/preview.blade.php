@@ -82,7 +82,7 @@
         @endif
         <div class="links">
           <a href="{{ route('event.edit', $data->id) }}">Izmeni</a>
-          <a class="buy" href="{{ $data->ticket }}" target="_blank">Naručite odmah</a>
+          <a class="buy" href="{{ $data->ticket }}" target="_blank">{{($data->price == 0)? "Prijavi se" : "Kupi kartu"}}</a>
         </div>
       </div>
       <i class="material-icons">{{$data->icon}}</i>

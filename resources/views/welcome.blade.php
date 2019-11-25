@@ -22,7 +22,7 @@
   <script src="{{asset('js/jquery.js')}}"></script>
 </head>
 
-<body onload="themeLoad()">
+<body onload="themeLoad()" data-url="{{ asset('assets/') }}">
   <link rel="stylesheet" href="{{ asset('styles/navigation.css') }}" />
   <header>
     <div class="mobile-nav">
@@ -79,6 +79,10 @@
         Beograd, levo 
         <br />
         Ulaz besplatan
+
+        <div class="links">
+          <a class="buy" href="#" target="_blank">Kupi kartu</a>
+        </div>
       </span>
     </div>
     <div class="card">
@@ -89,6 +93,10 @@
         Beograd, levo 
         <br />
         Ulaz besplatan
+
+        <div class="links">
+          <a class="buy" href="#" target="_blank">Kupi kartu</a>
+        </div>
       </span>
     </div>
     <div class="card">
@@ -99,6 +107,10 @@
         Beograd, levo 
         <br />
         Ulaz besplatan
+
+        <div class="links">
+          <a class="buy" href="#" target="_blank">Kupi kartu</a>
+        </div>
       </span>
     </div>
     <div class="card">
@@ -109,6 +121,10 @@
         Beograd, levo 
         <br />
         Ulaz besplatan
+
+        <div class="links">
+          <a class="buy" href="#" target="_blank">Kupi kartu</a>
+        </div>
       </span>
     </div>
     <div class="card">
@@ -119,6 +135,66 @@
         Beograd, levo 
         <br />
         Ulaz besplatan
+
+        <div class="links">
+          <a class="buy" href="#" target="_blank">Kupi kartu</a>
+        </div>
+      </span>
+    </div>
+    <div class="card">
+      <img src="https://www.fillmurray.com/640/360" alt="ne">
+      <span class="about">
+        <span class="name">mrtvi mi5</span>
+        <br />
+        Beograd, levo 
+        <br />
+        Ulaz besplatan
+
+        <div class="links">
+          <a class="buy" href="#" target="_blank">Kupi kartu</a>
+        </div>
+      </span>
+    </div>
+    <div class="card">
+      <img src="https://www.fillmurray.com/640/360" alt="ne">
+      <span class="about">
+        <span class="name">mrtvi mi5</span>
+        <br />
+        Beograd, levo 
+        <br />
+        Ulaz besplatan
+
+        <div class="links">
+          <a class="buy" href="#" target="_blank">Kupi kartu</a>
+        </div>
+      </span>
+    </div>
+    <div class="card">
+      <img src="https://www.fillmurray.com/640/360" alt="ne">
+      <span class="about">
+        <span class="name">mrtvi mi5</span>
+        <br />
+        Beograd, levo 
+        <br />
+        Ulaz besplatan
+
+        <div class="links">
+          <a class="buy" href="#" target="_blank">Kupi kartu</a>
+        </div>
+      </span>
+    </div>
+    <div class="card">
+      <img src="https://www.fillmurray.com/640/360" alt="ne">
+      <span class="about">
+        <span class="name">mrtvi mi5</span>
+        <br />
+        Beograd, levo 
+        <br />
+        Ulaz besplatan
+
+        <div class="links">
+          <a class="buy" href="#" target="_blank">Kupi kartu</a>
+        </div>
       </span>
     </div>
   </div>
