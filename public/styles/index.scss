@@ -98,11 +98,9 @@
     }
 
     .links {
-      width: 100%;
       display: flex;
       justify-content: flex-end;
-      padding-bottom: 1rem;
-      padding-right: 3rem;
+      padding-bottom: 2rem;
       position: absolute;
       bottom: 0;
       .buy {
@@ -127,7 +125,7 @@
 
     span {
       position: relative;
-      height: 300px;
+      height: 400px;
       padding: 1rem 2rem;
       font-size: 2rem;
       .name {
@@ -153,10 +151,10 @@
       }
       span {
         height: 200px;
-        font-size: 1.5rem;
+        font-size: 1rem;
 
         .name {
-          font-size: 3rem;
+          font-size: 2rem;
         }
       }
     }
@@ -180,11 +178,6 @@
       }
       span {
         height: 200px;
-        font-size: 1.5rem;
-
-        .name {
-          font-size: 3rem;
-        }
       }
     }
   }

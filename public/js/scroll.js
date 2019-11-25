@@ -1,6 +1,6 @@
 $('#down').click(()=> {
   $('html, body').animate({
-    scrollTop: $("#starred").offset().top
+    scrollTop: $("#starred").offset().top - 6 * parseFloat(getComputedStyle(document.documentElement).fontSize)
   }, 500);
 })
 
