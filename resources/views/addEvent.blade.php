@@ -63,7 +63,7 @@
         <h2>Napravite novi događaj</h2>
 
         {!! Form::label('name', 'Naziv događaja') !!}
-        {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Predstava Romeo i Julija']) !!}
+        {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Predstava Romeo i Julija', 'id' => 'eventname', 'required' => 'true']) !!}
 
         {!! Form::label('type', 'Tip događaja') !!}
         {!! 
@@ -84,7 +84,7 @@
         <div id="results" ></div>
 
         {!! Form::label('loc_name', 'Ime mesta koje ce se prikazivati') !!}
-        {!! Form::text('loc_name', null, ['class' => 'form-control', 'placeholder' => 'Narodno pozorište', 'id' => 'place']) !!}
+        {!! Form::text('loc_name', null, ['class' => 'form-control', 'placeholder' => 'Narodno pozorište', 'id' => 'placename', 'required' => 'true']) !!}
 
         <input type="hidden" id="lat" name="lat">
         <input type="hidden" id="lon" name="lon">
@@ -103,18 +103,55 @@
         {!! Form::text('ticket', null, ['class' => 'form-control', 'placeholder' => 'www.kupovina.karata']) !!}
         
         {!! Form::label('price', 'Cena (RSD)') !!}
-        {!! Form::number('price', 0, ['class' => 'form-control', 'step' => '10', 'min' => '0']) !!}
+        {!! Form::number('price', 0, ['class' => 'form-control', 'step' => '10', 'min' => '0', 'id' => 'price']) !!}
 
         {!! Form::label('price', 'Izaberite sliku događaja') !!}
-        <input type="file" name="images[]" multiple>
+        <input type="file" name="images[]" id="images" multiple required>
 
-        {!! Form::textarea('desc', null, ['class' => 'form-control', 'placeholder' => 'Prelepa predstava Romeo i Julija odigrana na narodnom pozorištu']) !!}
+        {!! Form::textarea('desc', null, ['class' => 'form-control','id' => 'desc', 'placeholder' => 'Prelepa predstava Romeo i Julija odigrana na narodnom pozorištu']) !!}
 
-        {!! Form::submit('Pošalji', ['class' => 'btn btn-info']) !!}
+        {!! Form::submit('Pošalji', ['class' => 'btn btn-info', 'onclick' => 'check(event)']) !!}
 
     {!! Form::close() !!}
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script>
+        function check(e) {
+              e = e || window.event;
+              // Validacija
+              if ($('#lat').val() == null || $('#lon').val() == null) {
+                alert('Upisi lokaciju!');
+                e.preventDefault();
+              }
+              if ($('#start').val() == null || $('#end').val() == null) {
+                alert('Upisi vreme pocetka i zavrsetka!');
+                e.preventDefault();
+              }
+              if (Date.parse($('#start').val()) > Date.parse($('#end').val())) {
+                alert('Vreme zavrsetka je vece od vremena pocetka!');
+                e.preventDefault();
+              }
+              if ($('#price').val() < 0) {
+                alert('Cena ne moze biti negativna!');
+                e.preventDefault();
+              }
+              if ($('#images').val() == null) {
+                alert('Dogadjaj mora imati barem jednu sliku!');
+                e.preventDefault();
+              }
+              if ($('#desc').val().length < 20) {
+                alert('Opis mora imati barem 20 karaktera!');
+                e.preventDefault();
+              }
+              if ($('#placename').val() == null) {
+                alert('Upisi naziv mesta!');
+                e.preventDefault();
+              }
+              if ($('#eventname').val() == null) {
+                alert('Upisi ime dogadjaja!');
+                e.preventDefault();
+              }
+              
+        }
         $('body').on('click', '#result', function(){
             $("#place").val($(this).text());
             $("#results").empty();

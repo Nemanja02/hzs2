@@ -91,6 +91,8 @@
         <input type="hidden" id="lon" name="lon">
         <input type="hidden" id="id" name="id" value="{{$data->id}}">
 
+        <input type="checkbox" name="starred" @if ($data->starred === 'on') checked @endif>
+
         {!! Form::label('start', 'Vreme početka') !!}
         {!! Form::text('start', date("Y/m/d H:i", $data->starting_time), ['class' => 'form-control', 'id' => 'start']) !!}
 
@@ -105,11 +107,16 @@
 
         {!! Form::textarea('desc', $data->description, ['class' => 'form-control', 'placeholder' => 'Prelepa predstava Romeo i Julija odigrana na narodnom pozorištu']) !!}
 
-        {!! Form::submit('Pošalji', ['class' => 'btn btn-info']) !!}
+        {!! Form::submit('Pošalji', ['class' => 'btn btn-info', 'onclick' => 'check()']) !!}
 
     {!! Form::close() !!}
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script>
+        function check() {
+            console.log("a");
+            return false;
+        }
+
         $('body').on('click', '#result', function(){
             $("#place").val($(this).text());
             $("#results").empty();
