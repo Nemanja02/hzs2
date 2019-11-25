@@ -58,7 +58,7 @@
     <div class="less">
       <input type="text" class="searchInput" name="query" placeholder="pretraga..."/>
       <i class="material-icons" onclick="toggleMore()">more_horiz</i>
-      <i class="material-icons">send</i>
+      <div id="oof"><i class="material-icons">send</i></div>
     </div>
     <div id="more">
     <input type="number" name="maxdist" min="0" id="" placeholder="Najveća udaljenost" />
@@ -68,6 +68,7 @@
       {!! Form::label('type', 'Tip događaja') !!}
       {!! 
           Form::select('type', array(
+              '' => 'Sve',
               'Koncert' => 'Koncert',
               'Music Festival' => 'Music Festival',
               'Predstava' => 'Predstava',
@@ -112,8 +113,8 @@
   </div>
   <script src="{{ asset('js/jquery.js') }}"></script>
   <script>
-    $('#search').click(function(){
-      $('#form').submit();
+    $('#oof').click(function(){
+      $('form').submit();
     })
   </script>
   
