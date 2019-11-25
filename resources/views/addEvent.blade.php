@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="{{ asset('styles/navigation.css') }}" />
   <header>
     <div class="mobile-nav">
-      <a href="{{route('index')}}">mape.</a>
+      <a href="{{route('index')}}">mula</a>
       <div
         onclick="toggleBurger()"
         id="burger"
@@ -38,7 +38,7 @@
     </div>
     <nav id="nav">
       <ul>
-        <li><a href="{{route('index')}}">mape.</a></li>
+        <li><a href="{{route('index')}}">mula</a></li>
         <li><a href="{{route('events')}}">događaji</a></li>
         <li><a href="{{route('event.new')}}">dodaj</a></li>
       </ul>

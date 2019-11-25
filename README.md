@@ -1,4 +1,4 @@
-## mape.
+## mula
 # Pomoć za pronalaženje najboljeg događaja u vašoj blizini
 
 ## Za pregled sajta na serveru posetite http://207.180.234.104/
