@@ -75,7 +75,7 @@
   <div id="starred">
     <h1>Popularni događaji</h1>
     @foreach ($data as $event)
-    <div class="card">
+    <div class="card" data-route="{{route('preview', $event->id)}}">
       <img src='{{ asset("image/" . $event->images[0]) }}' alt="ne">
       <span class="about">
         <span class="name">{{$event->name}}</span>

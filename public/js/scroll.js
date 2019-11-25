@@ -5,7 +5,10 @@ $('#down').click(()=> {
 })
 
 $(document).ready(() => {
-  
+  $('.card').click(function () {
+    window.location.href = $(this).attr('data-route');
+  });
+
   const code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 83];
   i = 0;
 

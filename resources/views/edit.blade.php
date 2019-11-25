@@ -91,8 +91,10 @@
         <input type="hidden" id="lon" name="lon">
         <input type="hidden" id="id" name="id" value="{{$data->id}}">
 
-        <input type="checkbox" name="starred" @if ($data->starred === 'on') checked @endif>
-
+        <div class="starred">
+          <label for="">Popularni događaj: </label>
+          <input type="checkbox" name="starred" @if ($data->starred === 'on') checked @endif>
+        </div>
         {!! Form::label('start', 'Vreme početka') !!}
         {!! Form::text('start', date("Y/m/d H:i", $data->starting_time), ['class' => 'form-control', 'id' => 'start']) !!}
 

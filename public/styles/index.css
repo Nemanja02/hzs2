@@ -101,6 +101,7 @@
 }
 
 #starred .card {
+  cursor: pointer;
   width: 80%;
   position: relative;
   margin-top: 2em;
@@ -116,9 +117,20 @@
           flex-direction: row-reverse;
   -webkit-box-shadow: 10px 10px 10px var(--color-shadow);
           box-shadow: 10px 10px 10px var(--color-shadow);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+#starred .card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 #starred .card:nth-child(2n) {
+  -webkit-transform-origin: right center;
+          transform-origin: right center;
   -ms-flex-item-align: end;
       align-self: flex-end;
   -webkit-box-pack: start;
