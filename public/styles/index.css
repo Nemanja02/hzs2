@@ -92,13 +92,19 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+#starred h1 {
+  padding: 2rem;
+  text-align: center;
 }
 
 #starred .card {
+  cursor: pointer;
   width: 80%;
-  height: 500px;
   position: relative;
-  margin-top: 3em;
+  margin-top: 2em;
   background-color: var(--color-card-bg);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -111,9 +117,20 @@
           flex-direction: row-reverse;
   -webkit-box-shadow: 10px 10px 10px var(--color-shadow);
           box-shadow: 10px 10px 10px var(--color-shadow);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+#starred .card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 #starred .card:nth-child(2n) {
+  -webkit-transform-origin: right center;
+          transform-origin: right center;
   -ms-flex-item-align: end;
       align-self: flex-end;
   -webkit-box-pack: start;

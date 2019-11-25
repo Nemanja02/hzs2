@@ -72,14 +72,15 @@
     <i class="material-icons">speaker</i>
     <i class="material-icons">local_play</i>
   </div> -->
-  <div id="starred" class="lol">
+  <div id="starred">
+    <h1>Popularni događaji</h1>
     @foreach ($data as $event)
-    <div class="card">
+    <div class="card" data-route="{{route('preview', $event->id)}}">
       <img src='{{ asset("image/" . $event->images[0]) }}' alt="ne">
       <span class="about">
         <span class="name">{{$event->name}}</span>
         <br />
-        {{$event->city_name}}, {{$event->dist}}km
+        {{$event->city_name}}, {{$event->dist}} km
         <br />
         {{($event->price == 0)? "Ulaz besplatan" : "Cena: " . $event->price . " rsd"}}
 
@@ -93,7 +94,6 @@
   
   <i id="up" class="material-icons">keyboard_arrow_up</i>
   <script src="{{asset('js/scroll.js')}}"></script>
-  <script src="{{asset('js/jquery.js')}}"></script>
   <script>
     $("#oof").click(function(){
       $('form').submit();

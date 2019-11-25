@@ -88,9 +88,10 @@
 
         <input type="hidden" id="lat" name="lat">
         <input type="hidden" id="lon" name="lon">
-
-        <label for="">Starred</label>
-        <input type="checkbox" name="starred">
+        <div class="starred">
+          <label for="">Popularni događaj: </label>
+          <input type="checkbox" name="starred">
+        </div>
 
         {!! Form::label('start', 'Vreme početka') !!}
         {!! Form::text('start', null, ['class' => 'form-control', 'id' => 'start', 'value' => '2014/03/15 05:06']) !!}
