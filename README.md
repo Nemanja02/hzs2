@@ -40,3 +40,15 @@ Za instalaciju potrebnih biblioteka za pokretanje servera za ovu web aplikaciju 
 - npm package manager
 
 Mala tajna koju smo dodali je sakriveni Konami kod na jednoj od stranica sajta. Ljubitelji starih video igara će veoma uživati ukoliko otkriju ovo malo iznenađenje.
+
+Svi .css i .scss fajlovi se nalaze u folderu /public/styles
+
+Stranice sajta se nalaze u resources/views. Stranice su pisane u Laravel Blade sintaksi koja se sastoji od obične html sintakse sa nekim specifičnim dodacima.
+
+Skripte se nalaze u public/js
+
+Ajax zahtevi su pisani unutar stranica u script tagovima
+
+Folderi node_modules i vendor cuvaju strane biblioteke potrebne za rad aplikacije
+
+Modeli za aplikaciju se nalaze u app folderu
