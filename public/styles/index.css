@@ -92,13 +92,18 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+#starred h1 {
+  padding: 2rem;
+  text-align: center;
 }
 
 #starred .card {
   width: 80%;
-  height: 500px;
   position: relative;
-  margin-top: 3em;
+  margin-top: 2em;
   background-color: var(--color-card-bg);
   display: -webkit-box;
   display: -ms-flexbox;
