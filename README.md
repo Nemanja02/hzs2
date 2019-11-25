@@ -1,6 +1,8 @@
 ## mape.
 # Pomoć za pronalaženje najboljeg događaja u vašoj blizini
 
+## Za pregled sajta na serveru posetite http://207.180.234.104/
+
 Korišćene  tehnologije:
 - APIs:
     - Za dobijanje koordinata lokacije na osnovu imena: https://locationiq.com/ 

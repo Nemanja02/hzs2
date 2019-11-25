@@ -192,6 +192,7 @@
 #starred .card img {
   border-radius: .5rem;
   width: 350px;
+  height: 400px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -199,6 +200,7 @@
 @media (max-width: 1200px) {
   #starred .card img {
     width: 250px;
+    height: 200px;
   }
   #starred .card span {
     height: 200px;
