@@ -1,8 +1,0 @@
-Stranice:
-    - Pocetna (starred events)
-    - Pretraga 
-    - Desavanje
-    - Dodavanje desavanja (star)
-    - Edit desavanja (star)
-    - About (cela)
-    -
